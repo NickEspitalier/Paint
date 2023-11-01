@@ -5,8 +5,8 @@ import java.awt.*;
 
 public class FenetreStrategieCopie extends JFrame {
 
-    private static final String TITRE_FENETRE = "Choisissez la stratégie du presse-papier";
-    private static final Dimension TAILLE_FENETRE = new Dimension(250, 100);
+    private static final String TITRE_FENETRE = "Choisissez...";
+    private static final Dimension TAILLE_FENETRE = new Dimension(300, 100);
 
     public FenetreStrategieCopie() {
         PanneauStrategieCopie panneauStrategieCopie = new PanneauStrategieCopie();

@@ -7,7 +7,6 @@ import java.awt.event.ActionEvent;
 public class PanneauStrategieCopie extends JPanel {
 
     public PanneauStrategieCopie() {
-        ButtonGroup groupeBoutons = new ButtonGroup();
         JCheckBox cochePosition = new JCheckBox("Position");
         JCheckBox cocheZoom = new JCheckBox("Niveau de zoom");
         JButton boutonConfirmation = new JButton("Confirmer");
@@ -27,8 +26,6 @@ public class PanneauStrategieCopie extends JPanel {
             SwingUtilities.getWindowAncestor((Component) e.getSource()).dispose();
         });
 
-        groupeBoutons.add(cochePosition);
-        groupeBoutons.add(cocheZoom);
         add(cochePosition);
         add(cocheZoom);
         add(boutonConfirmation);
