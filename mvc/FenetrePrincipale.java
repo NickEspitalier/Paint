@@ -13,7 +13,7 @@ public class FenetrePrincipale extends JFrame implements Observateur {
         Perspective1 p1 = new Perspective1();
         Perspective2 p2 = new Perspective2();
         MenuFenetre menu = new MenuFenetre();
-        add(menu);
+        add(menu, BorderLayout.NORTH);
         add(vignette);
         add(p1);
         add(p2);
