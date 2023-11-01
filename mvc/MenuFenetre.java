@@ -36,7 +36,9 @@ public class MenuFenetre extends JMenuBar {
 
         menuFichier.add(menuFichierSauvegarde);
         menuFichier.add(menuChargerPerspective);
+        menuFichier.addSeparator();
         menuFichier.add(menuChargerImage);
+        menuFichier.addSeparator();
         menuFichier.add(menuQuitter);
 
         add(menuFichier);
@@ -48,6 +50,7 @@ public class MenuFenetre extends JMenuBar {
         JMenuItem menuRefaire = new JMenuItem(TITRE_MENU_EDITION_REFAIRE);
 
         menuEdition.add(menuDefaire);
+        menuEdition.addSeparator();
         menuEdition.add(menuRefaire);
 
         add(menuEdition);
