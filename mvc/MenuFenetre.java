@@ -20,7 +20,7 @@ public class MenuFenetre extends JMenuBar {
     private static final String TITRE_MENU_PRESSEPAPIER_STRAT = "Choisir la stratégie du presse-papier";
 
     ControlleurMenu controlleurMenu = new ControlleurMenu(new CommandeChargerImage(), new CommandeChargerPerspective(),
-            new CommandeDefaire(), new CommandePressePapier(), new CommandeQuitter(), new CommandeSauvegarder());
+            new CommandeDefaire(), new CommandeOptionsPressePapier(), new CommandeQuitter(), new CommandeSauvegarder());
 
 
     public MenuFenetre() {
@@ -64,10 +64,7 @@ public class MenuFenetre extends JMenuBar {
         JMenu menuPressePapier = new JMenu(TITRE_MENU_PRESSEPAPIER);
         JMenuItem menuStrategieCopie = new JMenuItem(TITRE_MENU_PRESSEPAPIER_STRAT);
 
-        menuStrategieCopie.addActionListener((ActionEvent e) -> {
-            new FenetreStrategieCopie();
-        });
-
+        menuStrategieCopie.addActionListener((ActionEvent e) -> { controlleurMenu.choisirOptionsPressePapier(); });
 
         menuPressePapier.add(menuStrategieCopie);
 
