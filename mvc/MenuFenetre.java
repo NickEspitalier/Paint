@@ -1,5 +1,8 @@
 package mvc;
 
+import commandes.*;
+import controlleurs.ControlleurMenu;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 
@@ -16,6 +19,9 @@ public class MenuFenetre extends JMenuBar {
     private static final String TITRE_MENU_PRESSEPAPIER = "Presse-Papier";
     private static final String TITRE_MENU_PRESSEPAPIER_STRAT = "Choisir la stratégie du presse-papier";
 
+    ControlleurMenu controlleurMenu = new ControlleurMenu(new CommandeChargerImage(), new CommandeChargerPerspective(),
+            new CommandeDefaire(), new CommandePressePapier(), new CommandeQuitter(), new CommandeSauvegarder());
+
 
     public MenuFenetre() {
         ajouterMenuFichier();
@@ -30,9 +36,7 @@ public class MenuFenetre extends JMenuBar {
         JMenuItem menuChargerImage = new JMenuItem(TITRE_MENU_FICHIER_CHARGER_IMAGE);
         JMenuItem menuQuitter = new JMenuItem(TITRE_MENU_FICHIER_QUITTER);
 
-        menuQuitter.addActionListener((ActionEvent e) -> {
-            System.exit(0);
-        });
+        menuQuitter.addActionListener((ActionEvent e) -> { controlleurMenu.quitterApplication(); });
 
         menuFichier.add(menuFichierSauvegarde);
         menuFichier.add(menuChargerPerspective);

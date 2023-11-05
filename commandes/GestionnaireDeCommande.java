@@ -1,4 +1,4 @@
-package fonctions;
+package commandes;
 
 public class GestionnaireDeCommande {
 }
