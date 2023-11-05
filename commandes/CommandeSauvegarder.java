@@ -1,5 +1,7 @@
 package commandes;
 
-public class CommandeSauvegarder implements Commande {
-    public void executer() {  }
+import modeles.ModeleApplication;
+
+public class CommandeSauvegarder extends Commande {
+    public void executer(ModeleApplication modele) {  }
 }

@@ -1,5 +1,9 @@
 package commandes;
 
-public class CommandeZoom implements Commande {
-    public void executer() {  }
+import modeles.ModeleApplication;
+
+public class CommandeZoom extends Commande {
+    public void executer(ModeleApplication modele) {
+
+    }
 }

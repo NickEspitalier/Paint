@@ -1,5 +1,7 @@
 package commandes;
 
-public interface Commande {
-    void executer();
+import modeles.ModeleApplication;
+
+public abstract class Commande {
+    public abstract void executer(ModeleApplication modele);
 }

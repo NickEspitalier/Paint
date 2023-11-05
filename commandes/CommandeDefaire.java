@@ -1,5 +1,7 @@
 package commandes;
 
-public class CommandeDefaire implements Commande {
-    public void executer() {  }
+import modeles.ModeleApplication;
+
+public class CommandeDefaire extends Commande {
+    public void executer(ModeleApplication modele) {  }
 }

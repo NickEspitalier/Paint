@@ -1,5 +1,7 @@
 package commandes;
 
-public class CommandePressePapier implements Commande {
-    public void executer() {  }
+import modeles.ModeleApplication;
+
+public class CommandePressePapier extends Commande {
+    public void executer(ModeleApplication modele) {  }
 }

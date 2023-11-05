@@ -1,31 +1,32 @@
 package vue;
 
-import modeles.Sujet;
+import modeles.ModeleApplication;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class FenetrePrincipale extends JFrame implements Observateur {
+public class FenetrePrincipale extends JFrame {
 
+    private boolean actif = true;			// État de l'environnement (actif ou non)
     private static final String TITRE_FENETRE = "Image avec Perspectives";
     private static final Dimension TAILLE_FENETRE = new Dimension(1000, 700);
 
+    public ModeleApplication modele = new ModeleApplication();
+
     public FenetrePrincipale() {
-        Vignette vignette = new Vignette();
-        Perspective1 p1 = new Perspective1();
-        Perspective2 p2 = new Perspective2();
-        MenuFenetre menu = new MenuFenetre();
-        add(menu, BorderLayout.NORTH);
-        add(vignette, BorderLayout.WEST);
-        add(p1, BorderLayout.CENTER);
-        add(p2, BorderLayout.EAST);
+        PanneauImages panneauImages = new PanneauImages(modele);
+        MenuFenetre menu = new MenuFenetre(modele);
+        add(menu, BorderLayout.PAGE_START);
+        add(panneauImages);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle(TITRE_FENETRE);
         setSize(TAILLE_FENETRE);
         setVisible(true);
         setLocationRelativeTo(null);
         setResizable(false);
-    }
 
-    public void mettreAJour(Sujet s) {}
+        while (actif) {
+            repaint();
+        }
+    }
 }

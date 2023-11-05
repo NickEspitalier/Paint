@@ -1,12 +1,13 @@
 package commandes;
 
+import modeles.ModeleApplication;
+
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
-import java.awt.*;
 
-public class CommandeChargerImage implements Commande {
-    public void executer() {
+public class CommandeChargerImage extends Commande {
+    public void executer(ModeleApplication modele) {
         JFileChooser fileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         fileChooser.setDialogTitle("Sélectionnez une image");
         fileChooser.setAcceptAllFileFilterUsed(false);
@@ -21,9 +22,7 @@ public class CommandeChargerImage implements Commande {
         // Si le fichier choisi est une image, nous commençons à le lire. Sinon, on génère un message d'erreur.
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             try {
-                ImageIcon image = new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath());
-                Image im = image.getImage();
-
+                modele.stockerNouvelleImage(new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath()));
             }
             catch (Exception e) {
                 JOptionPane.showMessageDialog(null,

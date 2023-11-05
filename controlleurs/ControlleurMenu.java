@@ -8,7 +8,8 @@ public class ControlleurMenu {
     private final ModeleApplication modele;
 
     public ControlleurMenu(Commande chargerImage, Commande chargerPerspectives, Commande defaire,
-                           Commande optionsPressePapier, Commande quitter, Commande sauvegarder, ModeleApplication ma) {
+                           Commande optionsPressePapier, Commande quitter, Commande sauvegarder,
+                           ModeleApplication ma) {
         this.chargerImage = chargerImage;
         this.chargerPerspectives = chargerPerspectives;
         this.defaire = defaire;
@@ -18,10 +19,10 @@ public class ControlleurMenu {
         this.modele = ma;
     }
 
-    public void chargerUneImage() { chargerImage.executer(); }
-    public void chargerDesPerspectives() { chargerPerspectives.executer(); }
-    public void choisirOptionsPressePapier() { optionsPressePapier.executer(); }
-    public void quitterApplication() { quitter.executer(); }
-    public void sauvegarderPerspectives() { sauvegarder.executer(); }
-    public void defaireCommande() { defaire.executer(); }
+    public void chargerUneImage() { chargerImage.executer(modele); }
+    public void chargerDesPerspectives() { chargerPerspectives.executer(modele); }
+    public void choisirOptionsPressePapier() { optionsPressePapier.executer(modele); }
+    public void quitterApplication() { quitter.executer(modele); }
+    public void sauvegarderPerspectives() { sauvegarder.executer(modele); }
+    public void defaireCommande() { defaire.executer(modele); }
 }

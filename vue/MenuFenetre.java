@@ -2,6 +2,7 @@ package vue;
 
 import commandes.*;
 import controlleurs.ControlleurMenu;
+import modeles.ModeleApplication;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -18,13 +19,13 @@ public class MenuFenetre extends JMenuBar {
     private static final String TITRE_MENU_EDITION_REFAIRE = "Refaire...";
     private static final String TITRE_MENU_PRESSEPAPIER = "Presse-Papier";
     private static final String TITRE_MENU_PRESSEPAPIER_STRAT = "Choisir la stratégie du presse-papier";
-
-    ControlleurMenu controlleurMenu = new ControlleurMenu(new CommandeChargerImage(),
-            new CommandeChargerPerspectives(), new CommandeDefaire(), new CommandeOptionsPressePapier(),
-            new CommandeQuitter(), new CommandeSauvegarder());
+    private final ControlleurMenu controlleurMenu;
 
 
-    public MenuFenetre() {
+    public MenuFenetre(ModeleApplication ma) {
+         controlleurMenu = new ControlleurMenu(new CommandeChargerImage(), new CommandeChargerPerspectives(),
+                 new CommandeDefaire(), new CommandeOptionsPressePapier(), new CommandeQuitter(),
+                 new CommandeSauvegarder(), ma);
         ajouterMenuFichier();
         ajouterMenuEdition();
         ajouterMenuPressePapier();

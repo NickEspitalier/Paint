@@ -1,5 +1,7 @@
 package commandes;
 
-public class CommandeChargerPerspectives implements Commande {
-    public void executer() {  }
+import modeles.ModeleApplication;
+
+public class CommandeChargerPerspectives extends Commande {
+    public void executer(ModeleApplication modele) {  }
 }

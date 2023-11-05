@@ -1,5 +1,7 @@
 package commandes;
 
-public class CommandeQuitter implements Commande {
-    public void executer() { System.exit(0); }
+import modeles.ModeleApplication;
+
+public class CommandeQuitter extends Commande {
+    public void executer(ModeleApplication modele) { System.exit(0); }
 }
