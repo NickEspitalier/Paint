@@ -1,4 +1,5 @@
 package fonctions;
 
-public class PressePapier {
+public class PressePapier implements Commande {
+    public void executer() {  }
 }

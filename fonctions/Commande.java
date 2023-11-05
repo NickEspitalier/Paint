@@ -1,4 +1,5 @@
 package fonctions;
 
-public class Commande {
+public interface Commande {
+    void executer();
 }

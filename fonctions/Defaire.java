@@ -1,5 +1,5 @@
 package fonctions;
 
-public class Translation implements Commande {
+public class Defaire implements Commande {
     public void executer() {  }
 }

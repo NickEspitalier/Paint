@@ -1,4 +1,5 @@
 package fonctions;
 
-public class Zoom {
+public class Zoom implements Commande {
+    public void executer() {  }
 }
