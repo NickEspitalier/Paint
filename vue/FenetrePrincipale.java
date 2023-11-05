@@ -1,4 +1,6 @@
-package mvc;
+package vue;
+
+import modeles.Sujet;
 
 import javax.swing.*;
 import java.awt.*;

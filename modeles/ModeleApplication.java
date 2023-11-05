@@ -1,4 +1,4 @@
-package mvc;
+package modeles;
 
 public class ModeleApplication {
 

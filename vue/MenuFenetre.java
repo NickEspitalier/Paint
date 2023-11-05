@@ -1,4 +1,4 @@
-package mvc;
+package vue;
 
 import commandes.*;
 import controlleurs.ControlleurMenu;
@@ -19,8 +19,9 @@ public class MenuFenetre extends JMenuBar {
     private static final String TITRE_MENU_PRESSEPAPIER = "Presse-Papier";
     private static final String TITRE_MENU_PRESSEPAPIER_STRAT = "Choisir la stratégie du presse-papier";
 
-    ControlleurMenu controlleurMenu = new ControlleurMenu(new CommandeChargerImage(), new CommandeChargerPerspective(),
-            new CommandeDefaire(), new CommandeOptionsPressePapier(), new CommandeQuitter(), new CommandeSauvegarder());
+    ControlleurMenu controlleurMenu = new ControlleurMenu(new CommandeChargerImage(),
+            new CommandeChargerPerspectives(), new CommandeDefaire(), new CommandeOptionsPressePapier(),
+            new CommandeQuitter(), new CommandeSauvegarder());
 
 
     public MenuFenetre() {
@@ -36,6 +37,7 @@ public class MenuFenetre extends JMenuBar {
         JMenuItem menuChargerImage = new JMenuItem(TITRE_MENU_FICHIER_CHARGER_IMAGE);
         JMenuItem menuQuitter = new JMenuItem(TITRE_MENU_FICHIER_QUITTER);
 
+        menuChargerImage.addActionListener((ActionEvent e) -> { controlleurMenu.chargerUneImage(); });
         menuQuitter.addActionListener((ActionEvent e) -> { controlleurMenu.quitterApplication(); });
 
         menuFichier.add(menuFichierSauvegarde);
