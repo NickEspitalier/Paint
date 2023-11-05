@@ -11,10 +11,11 @@ public class ControlleurMenu {
                            Commande optionsPressePapier, Commande quitter, Commande sauvegarder, ModeleApplication ma) {
         this.chargerImage = chargerImage;
         this.chargerPerspectives = chargerPerspectives;
+        this.defaire = defaire;
         this.optionsPressePapier = optionsPressePapier;
         this.quitter = quitter;
         this.sauvegarder = sauvegarder;
-        this.defaire = defaire;
+        this.modele = ma;
     }
 
     public void chargerUneImage() { chargerImage.executer(); }
