@@ -19,7 +19,6 @@ public class PanneauImages extends JPanel {
 
         Border countourPanneau = BorderFactory.createLineBorder(Color.black, 4);
         setBorder(countourPanneau);
-        setSize(1000, 500);
         add(vignette);
         add(p1);
         add(p2);
