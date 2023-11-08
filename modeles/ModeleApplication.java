@@ -1,6 +1,5 @@
 package modeles;
 
-import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
@@ -12,7 +11,7 @@ public class ModeleApplication extends Sujet {
         if (images.isEmpty()) {
             for (int i = 0; i < 3; i++) { images.add(im); }
         } else {
-            for (int i = 0; i < 3; i++) { images.set(i, im); }
+            for (int j = 0; j < 3; j++) { images.set(j, im); }
         }
     }
 
