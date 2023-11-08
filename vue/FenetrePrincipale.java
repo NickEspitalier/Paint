@@ -1,7 +1,6 @@
 package vue;
 
 import modeles.ModeleApplication;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,10 +13,12 @@ public class FenetrePrincipale extends JFrame {
     public ModeleApplication modele = new ModeleApplication();
 
     public FenetrePrincipale() {
-        PanneauImages panneauImages = new PanneauImages(modele);
         MenuFenetre menu = new MenuFenetre(modele);
+        PanneauImages panneauImages = new PanneauImages(modele);
+        PanneauCopyright panneauCopyright = new PanneauCopyright();
         add(menu, BorderLayout.PAGE_START);
         add(panneauImages);
+        add(panneauCopyright, BorderLayout.PAGE_END);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle(TITRE_FENETRE);
         setSize(TAILLE_FENETRE);
@@ -26,7 +27,7 @@ public class FenetrePrincipale extends JFrame {
         setResizable(false);
 
         while (actif) {
-            repaint();
+            modele.notifierObservateurs();
         }
     }
 }

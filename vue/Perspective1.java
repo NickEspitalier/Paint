@@ -3,19 +3,32 @@ package vue;
 import modeles.ModeleApplication;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
 
-public class Perspective1 extends JPanel {
+public class Perspective1 extends JPanel implements Observateur {
 
-    ImageIcon perspective1;
+    ModeleApplication modele;
+    Image perspective1;
 
-    Perspective1(ModeleApplication modele) {
+    Perspective1(ModeleApplication m) {
+        this.modele = m;
+        Border countourP1 = BorderFactory.createLineBorder(Color.blue, 4);
+        setBorder(countourP1);
+    }
+
+    @Override
+    public void mettreAJour() {
         if (!modele.recupererImages().isEmpty()) {
-            perspective1 = modele.recupererImages().get(1);
-            JLabel etiquetteVignette = new JLabel(perspective1);
-            add(etiquetteVignette);
+            perspective1 = modele.recupererImages().get(0);
+            repaint();
         }
+    }
 
-        add(new JSeparator(JSeparator.VERTICAL), BorderLayout.LINE_START);
+    protected void paintComponent(Graphics g) {
+        if (!modele.recupererImages().isEmpty()) {
+            super.paintComponent(g);
+            g.drawImage(perspective1, 0, 0, getWidth(), getHeight(), this);
+        }
     }
 }

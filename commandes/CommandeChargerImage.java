@@ -2,9 +2,11 @@ package commandes;
 
 import modeles.ModeleApplication;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
+import java.io.File;
 
 public class CommandeChargerImage extends Commande {
     public void executer(ModeleApplication modele) {
@@ -22,7 +24,7 @@ public class CommandeChargerImage extends Commande {
         // Si le fichier choisi est une image, nous commençons à le lire. Sinon, on génère un message d'erreur.
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             try {
-                modele.stockerNouvelleImage(new ImageIcon(fileChooser.getSelectedFile().getAbsolutePath()));
+                modele.stockerNouvelleImage(ImageIO.read(new File(fileChooser.getSelectedFile().getAbsolutePath())));
             }
             catch (Exception e) {
                 JOptionPane.showMessageDialog(null,

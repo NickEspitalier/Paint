@@ -5,10 +5,10 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class ModeleApplication extends Sujet {
-    ArrayList<ImageIcon> images = new ArrayList<>();
+    ArrayList<Image> images = new ArrayList<>();
     String choixPressePapier;
 
-    public void stockerNouvelleImage(ImageIcon im) {
+    public void stockerNouvelleImage(Image im) {
         if (images.isEmpty()) {
             for (int i = 0; i < 3; i++) { images.add(im); }
         } else {
@@ -17,6 +17,6 @@ public class ModeleApplication extends Sujet {
     }
 
     public void choisirOptionsPressePapier(String choix) { choixPressePapier = choix; }
-    public ArrayList<ImageIcon> recupererImages() { return images; }
+    public ArrayList<Image> recupererImages() { return images; }
     public String recupererChoixPressePaper() { return choixPressePapier; }
 }
