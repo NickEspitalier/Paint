@@ -25,8 +25,7 @@ public class CommandeChargerImage extends Commande {
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             try {
                 modele.stockerNouvelleImage(ImageIO.read(new File(fileChooser.getSelectedFile().getAbsolutePath())));
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null,
                         "Lecture impossible.",
                         "Erreur", JOptionPane.WARNING_MESSAGE);
