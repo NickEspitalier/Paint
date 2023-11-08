@@ -20,7 +20,7 @@ public class Perspective2 extends JPanel implements ObservateurModele {
     @Override
     public void mettreAJour() {
         if (!modele.recupererImages().isEmpty()) {
-            perspective2 = modele.recupererImages().get(0);
+            perspective2 = modele.recupererImages().get(2);
             repaint();
         }
     }
