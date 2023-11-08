@@ -15,8 +15,7 @@ public class CommandeChargerImage extends Commande {
         fileChooser.setAcceptAllFileFilterUsed(false);
 
         // Un filtre est établi afin de ne récupérer que des images.
-        FileNameExtensionFilter filtre = new FileNameExtensionFilter(".jpg, .png", "jpg",
-                "png");
+        FileNameExtensionFilter filtre = new FileNameExtensionFilter(".jpg, .png", "jpg", "png");
         fileChooser.addChoosableFileFilter(filtre);
 
         int returnValue = fileChooser.showOpenDialog(null);
@@ -26,13 +25,11 @@ public class CommandeChargerImage extends Commande {
             try {
                 modele.stockerNouvelleImage(ImageIO.read(new File(fileChooser.getSelectedFile().getAbsolutePath())));
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null,
-                        "Lecture impossible.",
-                        "Erreur", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Lecture impossible.", "Erreur",
+                        JOptionPane.WARNING_MESSAGE);
             }
         } else {
-            JOptionPane.showMessageDialog(null,
-                    "Sélection annulée.", "Erreur",
+            JOptionPane.showMessageDialog(null, "Sélection annulée.", "Erreur",
                     JOptionPane.WARNING_MESSAGE);
         }
     };
