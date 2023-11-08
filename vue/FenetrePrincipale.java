@@ -26,8 +26,6 @@ public class FenetrePrincipale extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
 
-        while (actif) {
-            modele.notifierObservateurs();
-        }
+        while (actif) { modele.notifierObservateurs(); }
     }
 }
