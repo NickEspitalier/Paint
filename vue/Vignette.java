@@ -3,7 +3,6 @@ package vue;
 import modeles.ModeleApplication;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 public class Vignette extends JPanel implements ObservateurModele {
@@ -13,8 +12,7 @@ public class Vignette extends JPanel implements ObservateurModele {
 
     Vignette(ModeleApplication m) {
         this.modele = m;
-        Border countourVignette = BorderFactory.createLineBorder(Color.black, 4);
-        setBorder(countourVignette);
+        setBorder(BorderFactory.createLineBorder(Color.black, 4));
     }
 
     @Override

@@ -3,7 +3,6 @@ package vue;
 import modeles.ModeleApplication;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 
 public class Perspective2 extends JPanel implements ObservateurModele {
@@ -13,8 +12,7 @@ public class Perspective2 extends JPanel implements ObservateurModele {
 
     Perspective2(ModeleApplication m) {
         this.modele = m;
-        Border countourP2 = BorderFactory.createLineBorder(Color.blue, 4);
-        setBorder(countourP2);
+        setBorder(BorderFactory.createLineBorder(Color.blue, 4));
     }
 
     @Override
