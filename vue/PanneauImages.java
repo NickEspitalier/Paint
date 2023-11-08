@@ -13,7 +13,6 @@ public class PanneauImages extends JPanel {
         modele.attacherObservateur(vignette);
         modele.attacherObservateur(p1);
         modele.attacherObservateur(p2);
-
         setLayout(new GridLayout(0,3));
         setBorder(BorderFactory.createLineBorder(Color.black, 4));
         add(vignette);
