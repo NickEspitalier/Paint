@@ -26,9 +26,7 @@ public class Perspective1 extends JPanel implements Observateur {
     }
 
     protected void paintComponent(Graphics g) {
-        if (!modele.recupererImages().isEmpty()) {
-            super.paintComponent(g);
-            g.drawImage(perspective1, 0, 0, getWidth(), getHeight(), this);
-        }
+        super.paintComponent(g);
+        g.drawImage(perspective1, 0, 0, getWidth(), getHeight(), this);
     }
 }
