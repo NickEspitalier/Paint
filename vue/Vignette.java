@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-public class Vignette extends JPanel implements ObservateurImages {
+public class Vignette extends JPanel implements ObservateurModele {
 
     ModeleApplication modele;
     Image vignette;

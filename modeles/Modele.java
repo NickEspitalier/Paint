@@ -1,15 +1,15 @@
 package modeles;
 
-import vue.ObservateurImages;
+import vue.ObservateurModele;
 
 import java.util.ArrayList;
 
 public abstract class Modele {
-    private final ArrayList<ObservateurImages> observateurs = new ArrayList<>();
+    private final ArrayList<ObservateurModele> observateurs = new ArrayList<>();
 
-    public void attacherObservateur(ObservateurImages o) { observateurs.add(o); }
+    public void attacherObservateur(ObservateurModele o) { observateurs.add(o); }
 
     public void notifierObservateurs() {
-        for (ObservateurImages o : observateurs) { o.mettreAJour(); }
+        for (ObservateurModele o : observateurs) { o.mettreAJour(); }
     }
 }

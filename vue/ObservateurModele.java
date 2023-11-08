@@ -1,5 +1,5 @@
 package vue;
 
-public interface ObservateurImages {
+public interface ObservateurModele {
     void mettreAJour();
 }

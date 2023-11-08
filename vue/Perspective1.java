@@ -6,7 +6,7 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
 
-public class Perspective1 extends JPanel implements ObservateurImages {
+public class Perspective1 extends JPanel implements ObservateurModele {
 
     ModeleApplication modele;
     Image perspective1;
