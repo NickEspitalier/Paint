@@ -3,7 +3,7 @@ package modeles;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class ModeleApplication extends Sujet {
+public class ModeleApplication extends Modele {
     ArrayList<Image> images = new ArrayList<>();
     String choixPressePapier;
 
