@@ -30,5 +30,5 @@ public class ModeleApplication extends Sujet {
     /**** Setters et Getters des variables du modèle ****/
     public void choisirOptionsPressePapier(String choix) { this.choixPressePapier = choix; }
     public ArrayList<Image> recupererImages() { return images; }
-    public String recupererChoixPressePaper() { return choixPressePapier; }
+    public String recupererChoixPressePapier() { return choixPressePapier; }
 }

@@ -8,8 +8,8 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 /**
- * Menu Swing qui affiche toutes les commandes que l'utilisateur effectuer du côté administratif de l'application,
- * soit les opérations qui n'impliquent pas la modification directe des perspectives.
+ * Menu Swing qui affiche toutes les commandes que l'utilisateur peut effectuer du côté administratif de l'application,
+ * c'est-à-dire les opérations qui n'impliquent pas la modification directe des perspectives.
  */
 public class MenuFenetre extends JMenuBar {
     /**** Initialisation des variables ****/
@@ -46,17 +46,19 @@ public class MenuFenetre extends JMenuBar {
     private void ajouterMenuFichier() {
         // On initialise les éléments du sous-menu...
         JMenu menuFichier = new JMenu(TITRE_MENU_FICHIER);
-        JMenuItem menuFichierSauvegarde = new JMenuItem(TITRE_MENU_FICHIER_SAUV);
+        JMenuItem menuSauvegarderPerspective = new JMenuItem(TITRE_MENU_FICHIER_SAUV);
         JMenuItem menuChargerPerspective = new JMenuItem(TITRE_MENU_FICHIER_CHARGE_PERSP);
         JMenuItem menuChargerImage = new JMenuItem(TITRE_MENU_FICHIER_CHARGER_IMAGE);
         JMenuItem menuQuitter = new JMenuItem(TITRE_MENU_FICHIER_QUITTER);
 
         // ... puis, on ajoute les commandes de chaque élément.
+        menuSauvegarderPerspective.addActionListener((ActionEvent e) -> { controlleurMenu.sauvegarderPerspectives(); });
+        menuChargerPerspective.addActionListener((ActionEvent e) -> { controlleurMenu.chargerDesPerspectives(); });
         menuChargerImage.addActionListener((ActionEvent e) -> { controlleurMenu.chargerUneImage(); });
         menuQuitter.addActionListener((ActionEvent e) -> { controlleurMenu.quitterApplication(); });
 
         // Enfin, on affiche les éléments dans le sous-menu et le sous-menu dans le menu.
-        menuFichier.add(menuFichierSauvegarde);
+        menuFichier.add(menuSauvegarderPerspective);
         menuFichier.add(menuChargerPerspective);
         menuFichier.addSeparator();
         menuFichier.add(menuChargerImage);
@@ -76,7 +78,7 @@ public class MenuFenetre extends JMenuBar {
         JMenuItem menuRefaire = new JMenuItem(TITRE_MENU_EDITION_REFAIRE);
 
         menuDefaire.addActionListener((ActionEvent e) -> { controlleurMenu.defaireCommande(); });
-        menuRefaire.addActionListener((ActionEvent e) -> { /* controlleurMenu.re();*/ });
+        menuRefaire.addActionListener((ActionEvent e) -> { controlleurMenu.refaireCommande(); });
 
         menuEdition.add(menuDefaire);
         menuEdition.addSeparator();
