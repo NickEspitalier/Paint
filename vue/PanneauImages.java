@@ -14,7 +14,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 /**
- * Panneau Swing qui agit en tant que conteneur des instances de l'image chargée.
+ * Panneau Swing qui agit en tant que conteneur des instances de l'image chargée ainsi que des opérations pouvant
+ * être accomplies avec la souris de l'utilisateur.
  */
 public class PanneauImages extends JPanel {
     /**** Initialisation des variables ****/
