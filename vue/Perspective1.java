@@ -38,6 +38,8 @@ public class Perspective1 extends JPanel implements ObservateurModele {
 
     /**
      * Peint le panneau avec l'instance de l'image récupérée.
+     *
+     * @param g Notre paramètre graphique
      */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
