@@ -5,17 +5,30 @@ import modeles.ModeleApplication;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Panneau Swing qui représente le premier élément principal du programme, soit la vignette. La vignette a pour
+ * objectif d'afficher une image qui a été chargée par l'utilisateur, et ensuite d'être utilisée en tant que forme
+ * initiale de l'image durant la modification des perspectives.
+ */
 public class Vignette extends JPanel implements ObservateurModele {
+    /**** Initialisation des variables ****/
+    ModeleApplication modele;                   // Modèle de l'application
+    Image vignette;                             // Première instance de l'image contenue dans le modèle
 
-    ModeleApplication modele;
-    Image vignette;
-
+    /**
+     * Constructeur d'initialisation. Le panneau récupère les données du modèle de l'application, et ensuite crée son
+     * contour.
+     *
+     * @param m Sujet de l'application
+     */
     Vignette(ModeleApplication m) {
         this.modele = m;
         setBorder(BorderFactory.createLineBorder(Color.black, 4));
     }
 
-    @Override
+    /**
+     * Met à jour le panneau au cas où le modèle contient des instances d'une image.
+     */
     public void mettreAJour() {
         if (!modele.recupererImages().isEmpty()) {
             vignette = modele.recupererImages().get(0);
@@ -23,6 +36,9 @@ public class Vignette extends JPanel implements ObservateurModele {
         }
     }
 
+    /**
+     * Peint le panneau avec l'instance de l'image récupérée.
+     */
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
         g.drawImage(vignette, 0, 0, getWidth(), getHeight(), this);

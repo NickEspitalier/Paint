@@ -3,10 +3,21 @@ package controlleurs;
 import commandes.Commande;
 import modeles.ModeleApplication;
 
+/**
+ * Classe représentant le controlleur du menu de l'application. Dans l'architecture MVC, le controlleur a pour but
+ * d'exécuter les commandes demandées par l'utilisateur. Ce controlleur est responsable de l'exécution des
+ * opérations des commandes de l'utilisateur qui sont connectées au menu, tel que le chargement d'une image ou
+ * la fin du programme.
+ */
 public class ControlleurMenu {
+    /**** Initialisation des variables ****/
+    // Commandes connectées au menu
     private final Commande chargerImage, chargerPerspectives, defaire, optionsPressePapier, quitter, sauvegarder;
-    private final ModeleApplication modele;
+    private final ModeleApplication modele;         // Modèle de l'application
 
+    /**
+     * Constructeur d'initialisation avec variables.
+     */
     public ControlleurMenu(Commande chargerImage, Commande chargerPerspectives, Commande defaire,
                            Commande optionsPressePapier, Commande quitter, Commande sauvegarder,
                            ModeleApplication ma) {
@@ -19,6 +30,7 @@ public class ControlleurMenu {
         this.modele = ma;
     }
 
+    /**** Méthodes d'exécution des commandes du menu ****/
     public void chargerUneImage() { chargerImage.executer(modele); }
     public void chargerDesPerspectives() { chargerPerspectives.executer(modele); }
     public void choisirOptionsPressePapier() { optionsPressePapier.executer(modele); }
