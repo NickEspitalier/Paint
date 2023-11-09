@@ -13,15 +13,14 @@ public class FenetrePrincipale extends JFrame {
     private boolean actif = true;		                                // État de l'environnement
     private static final String TITRE_FENETRE = "Image avec Perspectives";
     private static final Dimension TAILLE_FENETRE = new Dimension(1000, 700);
-    public ModeleApplication modele = new ModeleApplication();          // Modèle de l'application
 
     /**
      * Constructeur d'initialisation. La fenêtre crée le menu, le panneau d'images et le panneau des droits
      * d'auteurs, puis les affiche selon un BorderLayout.
      */
-    public FenetrePrincipale() {
-        MenuFenetre menu = new MenuFenetre(modele);
-        PanneauImages panneauImages = new PanneauImages(modele);
+    public FenetrePrincipale(ModeleApplication ma) {
+        MenuFenetre menu = new MenuFenetre(ma);
+        PanneauImages panneauImages = new PanneauImages(ma);
         PanneauCopyright panneauCopyright = new PanneauCopyright();
         add(menu, BorderLayout.PAGE_START);
         add(panneauImages);
@@ -34,6 +33,6 @@ public class FenetrePrincipale extends JFrame {
         setResizable(false);
 
         // Tant que la fenêtre demeure active, les instances de l'image chargée sont mises à jour.
-        while (actif) { modele.notifierObservateurs(); }
+        while (actif) { ma.notifierObservateurs(); }
     }
 }

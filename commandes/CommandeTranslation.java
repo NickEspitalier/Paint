@@ -7,7 +7,7 @@ import modeles.ModeleApplication;
  * à l'utilisateur de déplacer une instance de l'image connectée à sa perspective dans son panneau respectif.
  */
 public class CommandeTranslation extends Commande {
-    public void executer(ModeleApplication modele) {
+    public void executer(ModeleApplication ma) {
 
     }
 }

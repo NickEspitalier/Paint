@@ -1,5 +1,7 @@
 package vue;
 
+import modeles.ModeleApplication;
+
 /**
  * Programme qui simule une application de modification d'une image à l'intérieur de perspectives.
  *
@@ -10,6 +12,7 @@ package vue;
  */
 public class ApplicationAffichageImages {
     public static void main(String[] args) {
-        new FenetrePrincipale();
+        ModeleApplication modele = new ModeleApplication();          // Modèle de l'application
+        new FenetrePrincipale(modele);
     }
 }
