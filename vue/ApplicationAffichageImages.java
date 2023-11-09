@@ -11,8 +11,10 @@ import modeles.ModeleApplication;
  * @version Copyright A2023
  */
 public class ApplicationAffichageImages {
+
     public static void main(String[] args) {
-        ModeleApplication modele = new ModeleApplication();          // Modèle de l'application
+        // On initialise le modèle de l'application, puis on exécute la fenêtre principale avec celui-ci.
+        ModeleApplication modele = new ModeleApplication();
         new FenetrePrincipale(modele);
     }
 }
