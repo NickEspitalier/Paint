@@ -32,6 +32,7 @@ public class ControlleurMenu {
     }
 
     /**** Méthodes d'exécution des commandes du menu ****/
+
     public void chargerUneImage() { chargerImage.executer(modele); }
     public void chargerDesPerspectives() { chargerPerspectives.executer(modele); }
     public void defaireCommande() { defaire.executer(modele); }
