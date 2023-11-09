@@ -5,13 +5,21 @@ import modeles.ModeleApplication;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Fenêtre Swing qui affiche le panneau de stratégie du presse-papier.
+ */
 public class FenetreStrategieCopie extends JFrame {
-
+    /**** Initialisation des variables ****/
     private static final String TITRE_FENETRE = "Choisissez...";
     private static final Dimension TAILLE_FENETRE = new Dimension(300, 100);
 
-    public FenetreStrategieCopie(ModeleApplication modele) {
-        PanneauStrategieCopie panneauStrategieCopie = new PanneauStrategieCopie(modele);
+    /**
+     * Constructeur d'initialisation. La fenêtre crée le panneau de stratégie, puis l'affiche.
+     *
+     * @param ma Le modèle de l'application
+     */
+    public FenetreStrategieCopie(ModeleApplication ma) {
+        PanneauStrategieCopie panneauStrategieCopie = new PanneauStrategieCopie(ma);
         add(panneauStrategieCopie);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle(TITRE_FENETRE);

@@ -4,8 +4,8 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * Classe représentant le modèle de l'application. Dans l'architecture MVC, le but du modèle est de contenir toutes
- * les données devant être sauvegardées durant l'exécution de l'application pour que celles-ci soient ensuite
+ * Classe représentant le modèle de l'application. Dans l'architecture MVC, le modèle a pour but de contenir toutes
+ * les données devant être sauvegardées durant l'exécution de l'application pour que celles-ci soient ensuite être
  * utilisées par la vue ou les controlleurs.
  */
 public class ModeleApplication extends Sujet {

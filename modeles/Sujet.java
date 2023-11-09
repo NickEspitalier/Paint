@@ -5,9 +5,9 @@ import vue.ObservateurModele;
 import java.util.ArrayList;
 
 /**
- * Classe abstraite représentant un sujet. Dans l'architecture MVC, le but du sujet est de contenir une liste
- * d'observateurs qui surveille la vue (dans notre application, la vignette et les perspectives) afin de permettre à
- * cette dernière de se mettre à jour avec les données du modèle.
+ * Classe abstraite représentant le sujet de l'application. Dans l'architecture MVC, le sujet a pour but de contenir
+ * une liste d'observateurs qui surveille la vue (dans notre application, la vignette et les perspectives) afin de
+ * permettre à cette dernière de se mettre à jour avec les données du modèle.
  */
 public abstract class Sujet {
     /**** Initialisation des variables ****/

@@ -19,10 +19,10 @@ public class Vignette extends JPanel implements ObservateurModele {
      * Constructeur d'initialisation. Le panneau récupère les données du modèle de l'application, et ensuite crée son
      * contour.
      *
-     * @param m Sujet de l'application
+     * @param ma Modèle de l'application
      */
-    Vignette(ModeleApplication m) {
-        this.modele = m;
+    Vignette(ModeleApplication ma) {
+        this.modele = ma;
         setBorder(BorderFactory.createLineBorder(Color.black, 4));
     }
 

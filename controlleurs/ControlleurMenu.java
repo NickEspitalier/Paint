@@ -11,19 +11,20 @@ import modeles.ModeleApplication;
  */
 public class ControlleurMenu {
     /**** Initialisation des variables ****/
-    // Commandes connectées au menu
-    private final Commande chargerImage, chargerPerspectives, defaire, optionsPressePapier, quitter, sauvegarder;
+    private final Commande chargerImage, chargerPerspectives, defaire, refaire, optionsPressePapier, quitter,
+            sauvegarder;                             // Commandes connectées au menu
     private final ModeleApplication modele;         // Modèle de l'application
 
     /**
      * Constructeur d'initialisation avec variables.
      */
-    public ControlleurMenu(Commande chargerImage, Commande chargerPerspectives, Commande defaire,
+    public ControlleurMenu(Commande chargerImage, Commande chargerPerspectives, Commande defaire, Commande refaire,
                            Commande optionsPressePapier, Commande quitter, Commande sauvegarder,
                            ModeleApplication ma) {
         this.chargerImage = chargerImage;
         this.chargerPerspectives = chargerPerspectives;
         this.defaire = defaire;
+        this.refaire = refaire;
         this.optionsPressePapier = optionsPressePapier;
         this.quitter = quitter;
         this.sauvegarder = sauvegarder;
@@ -33,8 +34,9 @@ public class ControlleurMenu {
     /**** Méthodes d'exécution des commandes du menu ****/
     public void chargerUneImage() { chargerImage.executer(modele); }
     public void chargerDesPerspectives() { chargerPerspectives.executer(modele); }
+    public void defaireCommande() { defaire.executer(modele); }
+    public void refaireCommande() { refaire.executer(modele); }
     public void choisirOptionsPressePapier() { optionsPressePapier.executer(modele); }
     public void quitterApplication() { quitter.executer(modele); }
     public void sauvegarderPerspectives() { sauvegarder.executer(modele); }
-    public void defaireCommande() { defaire.executer(modele); }
 }
