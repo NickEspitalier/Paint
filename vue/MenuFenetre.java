@@ -55,7 +55,7 @@ public class MenuFenetre extends JMenuBar {
         menuChargerImage.addActionListener((ActionEvent e) -> { controlleurMenu.chargerUneImage(); });
         menuQuitter.addActionListener((ActionEvent e) -> { controlleurMenu.quitterApplication(); });
 
-        // Enfin, on affiche les éléments dans le sous-menu, et le sous-menu dans le menu.
+        // Enfin, on affiche les éléments dans le sous-menu et le sous-menu dans le menu.
         menuFichier.add(menuFichierSauvegarde);
         menuFichier.add(menuChargerPerspective);
         menuFichier.addSeparator();
