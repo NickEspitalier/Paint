@@ -31,8 +31,7 @@ public class ControlleurMenu {
         this.modele = ma;
     }
 
-    /**** Méthodes d'exécution des commandes du menu ****/
-
+    // Méthodes d'exécution des commandes du menu
     public void chargerUneImage() { chargerImage.executer(modele); }
     public void chargerDesPerspectives() { chargerPerspectives.executer(modele); }
     public void defaireCommande() { defaire.executer(modele); }

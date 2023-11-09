@@ -24,8 +24,7 @@ public class ControlleurPerspectives {
         this.modele = ma;
     }
 
-    /**** Méthodes d'exécution des commandes des perspectives ****/
-
+    // Méthodes d'exécution des commandes des perspectives
     public void copierColler() { pressePapier.executer(modele); }
     public void deplacerPerspective() { translation.executer(modele); }
     public void agrandirPerspective() { zoom.executer(modele); }
