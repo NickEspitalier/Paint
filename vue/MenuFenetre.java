@@ -52,10 +52,10 @@ public class MenuFenetre extends JMenuBar {
         JMenuItem menuQuitter = new JMenuItem(TITRE_MENU_FICHIER_QUITTER);
 
         // ... puis, on ajoute les commandes de chaque élément.
-        menuSauvegarderPerspective.addActionListener((ActionEvent e) -> { controlleurMenu.sauvegarderPerspectives(); });
-        menuChargerPerspective.addActionListener((ActionEvent e) -> { controlleurMenu.chargerDesPerspectives(); });
-        menuChargerImage.addActionListener((ActionEvent e) -> { controlleurMenu.chargerUneImage(); });
-        menuQuitter.addActionListener((ActionEvent e) -> { controlleurMenu.quitterApplication(); });
+        menuSauvegarderPerspective.addActionListener((ActionEvent e) -> controlleurMenu.sauvegarderPerspectives());
+        menuChargerPerspective.addActionListener((ActionEvent e) -> controlleurMenu.chargerDesPerspectives());
+        menuChargerImage.addActionListener((ActionEvent e) -> controlleurMenu.chargerUneImage());
+        menuQuitter.addActionListener((ActionEvent e) -> controlleurMenu.quitterApplication());
 
         // Enfin, on affiche les éléments dans le sous-menu et le sous-menu dans le menu.
         menuFichier.add(menuSauvegarderPerspective);
@@ -77,8 +77,8 @@ public class MenuFenetre extends JMenuBar {
         JMenuItem menuDefaire = new JMenuItem(TITRE_MENU_EDITION_DEFAIRE);
         JMenuItem menuRefaire = new JMenuItem(TITRE_MENU_EDITION_REFAIRE);
 
-        menuDefaire.addActionListener((ActionEvent e) -> { controlleurMenu.defaireCommande(); });
-        menuRefaire.addActionListener((ActionEvent e) -> { controlleurMenu.refaireCommande(); });
+        menuDefaire.addActionListener((ActionEvent e) -> controlleurMenu.defaireCommande());
+        menuRefaire.addActionListener((ActionEvent e) -> controlleurMenu.refaireCommande());
 
         menuEdition.add(menuDefaire);
         menuEdition.addSeparator();
@@ -94,7 +94,7 @@ public class MenuFenetre extends JMenuBar {
         JMenu menuPressePapier = new JMenu(TITRE_MENU_PRESSEPAPIER);
         JMenuItem menuStrategieCopie = new JMenuItem(TITRE_MENU_PRESSEPAPIER_STRAT);
 
-        menuStrategieCopie.addActionListener((ActionEvent e) -> { controlleurMenu.choisirOptionsPressePapier(); });
+        menuStrategieCopie.addActionListener((ActionEvent e) -> controlleurMenu.choisirOptionsPressePapier());
 
         menuPressePapier.add(menuStrategieCopie);
 

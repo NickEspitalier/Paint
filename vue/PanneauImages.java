@@ -60,9 +60,7 @@ public class PanneauImages extends JPanel {
                 }
             });
 
-            p.addMouseWheelListener((MouseWheelEvent e) -> {
-                controlleurPerspectives.agrandirPerspective();
-            });
+            p.addMouseWheelListener((MouseWheelEvent e) -> controlleurPerspectives.agrandirPerspective());
         }
     }
 }
