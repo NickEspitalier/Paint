@@ -21,7 +21,7 @@ public class Perspective2 extends JPanel implements ObservateurModele {
      *
      * @param ma Modèle de l'application
      */
-    Perspective2(ModeleApplication ma) {
+    public Perspective2(ModeleApplication ma) {
         this.modele = ma;
         setBorder(BorderFactory.createLineBorder(Color.blue, 4));
     }

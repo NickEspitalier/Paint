@@ -21,7 +21,7 @@ public class Vignette extends JPanel implements ObservateurModele {
      *
      * @param ma Modèle de l'application
      */
-    Vignette(ModeleApplication ma) {
+    public Vignette(ModeleApplication ma) {
         this.modele = ma;
         setBorder(BorderFactory.createLineBorder(Color.black, 4));
     }

@@ -12,7 +12,7 @@ public class PanneauCopyright extends JPanel {
      * Constructeur d'initialisation. Le panneau crée une étiquette contenant les droits d'auteurs ainsi que
      * sa police de caractère avant de l'attacher à lui-même.
      */
-    PanneauCopyright() {
+    public PanneauCopyright() {
         JLabel labelCopyright = new JLabel();
         labelCopyright.setText("Dominic Achkarian, Nicolas Espitalier & Thomas Lavoie © 2023");
         labelCopyright.setFont(new Font("Times New Roman", Font.BOLD, 18));

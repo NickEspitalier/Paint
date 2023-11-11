@@ -30,7 +30,7 @@ public class PanneauImages extends JPanel {
      *
      * @param ma  Le modèle de l'application
      */
-    PanneauImages(ModeleApplication ma) {
+    public PanneauImages(ModeleApplication ma) {
         controlleurPerspectives = new ControlleurPerspectives(new CommandePressePapier(), new CommandeTranslation(),
                 new CommandeZoom(), ma);
         vignette = new Vignette(ma);
