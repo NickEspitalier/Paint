@@ -15,7 +15,7 @@ public class MenuFenetre extends JMenuBar {
     /**** Initialisation des variables ****/
     private static final String TITRE_MENU_FICHIER = "Fichier";
     private static final String TITRE_MENU_FICHIER_SAUV = "Sauvegarder les perspectives en tant que...";
-    private static final String TITRE_MENU_FICHIER_CHARGE_PERSP = "Charger des perspectives";
+    private static final String TITRE_MENU_FICHIER_CHARGER_PERSP = "Charger des perspectives";
     private static final String TITRE_MENU_FICHIER_CHARGER_IMAGE = "Charger image";
     private static final String TITRE_MENU_FICHIER_QUITTER = "Quitter";
     private static final String TITRE_MENU_EDITION = "Edition";
@@ -47,7 +47,7 @@ public class MenuFenetre extends JMenuBar {
         // On initialise les éléments du sous-menu...
         JMenu menuFichier = new JMenu(TITRE_MENU_FICHIER);
         JMenuItem menuSauvegarderPerspective = new JMenuItem(TITRE_MENU_FICHIER_SAUV);
-        JMenuItem menuChargerPerspective = new JMenuItem(TITRE_MENU_FICHIER_CHARGE_PERSP);
+        JMenuItem menuChargerPerspective = new JMenuItem(TITRE_MENU_FICHIER_CHARGER_PERSP);
         JMenuItem menuChargerImage = new JMenuItem(TITRE_MENU_FICHIER_CHARGER_IMAGE);
         JMenuItem menuQuitter = new JMenuItem(TITRE_MENU_FICHIER_QUITTER);
 
