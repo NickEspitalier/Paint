@@ -12,8 +12,8 @@ import java.awt.*;
  */
 public class Vignette extends JPanel implements ObservateurModele {
     /**** Initialisation des variables ****/
-    ModeleApplication modele;                   // Modèle de l'application
-    Image vignette;                             // Première instance de l'image contenue dans le modèle
+    private ModeleApplication modele;                   // Modèle de l'application
+    private Image vignette;                             // Première instance de l'image contenue dans le modèle
 
     /**
      * Constructeur d'initialisation. Le panneau récupère les données du modèle de l'application, et ensuite crée son
