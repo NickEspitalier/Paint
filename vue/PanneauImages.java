@@ -4,7 +4,7 @@ import commandes.CommandePressePapier;
 import commandes.CommandeTranslation;
 import commandes.CommandeZoom;
 import controlleurs.ControlleurPerspectives;
-import modeles.ModeleApplication;
+import modele.ModeleApplication;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;

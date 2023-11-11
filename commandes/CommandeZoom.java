@@ -1,6 +1,6 @@
 package commandes;
 
-import modeles.ModeleApplication;
+import modele.ModeleApplication;
 
 /**
  * Commande qui a pour but de faire un "zoom" sur l'image. En d'autres termes, elle permet à l'utilisateur d'agrandir

@@ -1,4 +1,4 @@
-package modeles;
+package modele;
 
 import vue.ObservateurModele;
 

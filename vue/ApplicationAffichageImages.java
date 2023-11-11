@@ -1,6 +1,6 @@
 package vue;
 
-import modeles.ModeleApplication;
+import modele.ModeleApplication;
 
 /**
  * Programme qui simule une application de modification d'une image à l'intérieur de perspectives.

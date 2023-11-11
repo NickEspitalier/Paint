@@ -1,6 +1,6 @@
 package commandes;
 
-import modeles.ModeleApplication;
+import modele.ModeleApplication;
 
 /**
  * Classe abstraite qui représente une commande appelée par l'utilisateur. Chaque commande suit le patron du même

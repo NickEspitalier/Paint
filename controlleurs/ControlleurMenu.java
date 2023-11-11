@@ -1,7 +1,7 @@
 package controlleurs;
 
 import commandes.Commande;
-import modeles.ModeleApplication;
+import modele.ModeleApplication;
 
 /**
  * Classe représentant le controlleur du menu de l'application. Dans l'architecture MVC, le controlleur a pour but

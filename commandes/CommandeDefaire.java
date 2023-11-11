@@ -1,6 +1,6 @@
 package commandes;
 
-import modeles.ModeleApplication;
+import modele.ModeleApplication;
 
 /**
  * Commande qui a pour but de défaire une commande précédente.

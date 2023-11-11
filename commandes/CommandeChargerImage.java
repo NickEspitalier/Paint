@@ -1,6 +1,6 @@
 package commandes;
 
-import modeles.ModeleApplication;
+import modele.ModeleApplication;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

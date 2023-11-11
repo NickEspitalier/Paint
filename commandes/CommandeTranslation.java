@@ -1,6 +1,6 @@
 package commandes;
 
-import modeles.ModeleApplication;
+import modele.ModeleApplication;
 
 /**
  * Commande qui a pour but d'appliquer une technique de translation à une perspective. En d'autres termes, elle permet

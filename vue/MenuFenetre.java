@@ -2,7 +2,7 @@ package vue;
 
 import commandes.*;
 import controlleurs.ControlleurMenu;
-import modeles.ModeleApplication;
+import modele.ModeleApplication;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
