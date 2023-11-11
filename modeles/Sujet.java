@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 public abstract class Sujet {
     /**** Initialisation des variables ****/
-    private final ArrayList<ObservateurModele> observateurs = new ArrayList<>();        // Liste d'observateurs
+    private ArrayList<ObservateurModele> observateurs = new ArrayList<>();        // Liste d'observateurs
 
     /**
      * Ajoute un observateur à la liste.

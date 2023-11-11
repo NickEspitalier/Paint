@@ -11,8 +11,8 @@ import modeles.ModeleApplication;
  */
 public class ControlleurPerspectives {
     /**** Initialisation des variables ****/
-    private final Commande pressePapier, translation, zoom;         // Commandes connectées aux perspectives
-    private final ModeleApplication modele;                         // Modèle de l'application
+    private Commande pressePapier, translation, zoom;         // Commandes connectées aux perspectives
+    private ModeleApplication modele;                         // Modèle de l'application
 
     /**
      * Constructeur d'initialisation avec variables.

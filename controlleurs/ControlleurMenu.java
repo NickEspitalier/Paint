@@ -11,9 +11,9 @@ import modeles.ModeleApplication;
  */
 public class ControlleurMenu {
     /**** Initialisation des variables ****/
-    private final Commande chargerImage, chargerPerspectives, defaire, refaire, optionsPressePapier, quitter,
-            sauvegarder;                             // Commandes connectées au menu
-    private final ModeleApplication modele;          // Modèle de l'application
+    // Commandes connectées au menu
+    private Commande chargerImage, chargerPerspectives, defaire, refaire, optionsPressePapier, quitter, sauvegarder;
+    private ModeleApplication modele;          // Modèle de l'application
 
     /**
      * Constructeur d'initialisation avec variables.

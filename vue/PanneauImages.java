@@ -19,7 +19,7 @@ import java.util.Arrays;
  */
 public class PanneauImages extends JPanel {
     /**** Initialisation des variables ****/
-    private final ControlleurPerspectives controlleurPerspectives;          // Controlleur des perspectives
+    private ControlleurPerspectives controlleurPerspectives;          // Controlleur des perspectives
     private Vignette vignette;
     private Perspective1 p1;
     private Perspective2 p2;
