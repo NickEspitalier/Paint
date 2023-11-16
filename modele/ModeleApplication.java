@@ -24,8 +24,7 @@ public class ModeleApplication extends Sujet {
         for (int i = 0; i < 3; i++) {
             Figure nouvelleImage = new Figure(im, null, new int[] { im.getWidth(null),
                     im.getHeight(null)});
-            if (premierChargement) { images.add(nouvelleImage); }
-            else { images.set(i, nouvelleImage); }
+            if (premierChargement) { images.add(nouvelleImage); } else { images.set(i, nouvelleImage); }
         }
         premierChargement = false;
     }
