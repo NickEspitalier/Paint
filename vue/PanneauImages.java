@@ -2,7 +2,8 @@ package vue;
 
 import commandes.CommandePressePapier;
 import commandes.CommandeTranslation;
-import commandes.CommandeZoom;
+import commandes.CommandeAgrandir;
+import commandes.CommandeReduire;
 import controlleurs.ControlleurPerspectives;
 import modele.ModeleApplication;
 import javax.swing.*;
@@ -32,7 +33,7 @@ public class PanneauImages extends JPanel {
      */
     public PanneauImages(ModeleApplication ma) {
         controlleurPerspectives = new ControlleurPerspectives(new CommandePressePapier(), new CommandeTranslation(),
-                new CommandeZoom(), ma);
+                new CommandeAgrandir(), new CommandeReduire(), ma);
         vignette = new Vignette(ma);
         p1 = new Perspective1(ma);
         p2 = new Perspective2(ma);
@@ -60,7 +61,8 @@ public class PanneauImages extends JPanel {
                 }
             });
 
-            p.addMouseWheelListener((MouseWheelEvent e) -> controlleurPerspectives.agrandirPerspective());
+            p.addMouseWheelListener((MouseWheelEvent e) ->
+                    controlleurPerspectives.changerTaillePerspective(e.getWheelRotation()));
         }
     }
 }

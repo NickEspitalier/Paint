@@ -11,21 +11,26 @@ import modele.ModeleApplication;
  */
 public class ControlleurPerspectives {
     /**** Initialisation des variables ****/
-    private Commande pressePapier, translation, zoom;         // Commandes connectées aux perspectives
+    private Commande pressePapier, translation, zoomIn, zoomOut;         // Commandes connectées aux perspectives
     private ModeleApplication modele;                         // Modèle de l'application
 
     /**
      * Constructeur d'initialisation avec variables.
      */
-    public ControlleurPerspectives(Commande pressePapier, Commande translation, Commande zoom, ModeleApplication ma) {
+    public ControlleurPerspectives(Commande pressePapier, Commande translation, Commande zoomIn, Commande zoomOut,
+                                   ModeleApplication ma) {
         this.pressePapier = pressePapier;
         this.translation = translation;
-        this.zoom = zoom;
+        this.zoomIn = zoomIn;
+        this.zoomOut = zoomOut;
         this.modele = ma;
     }
 
     // Méthodes d'exécution des commandes des perspectives
     public void copierColler() { pressePapier.executer(modele); }
     public void deplacerPerspective() { translation.executer(modele); }
-    public void agrandirPerspective() { zoom.executer(modele); }
+    public void changerTaillePerspective(int rotation) {
+        if (rotation < 0) { zoomIn.executer(modele); }
+        else { zoomOut.executer(modele); }
+    }
 }

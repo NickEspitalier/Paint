@@ -1,5 +1,6 @@
 package vue;
 
+import modele.Figure;
 import modele.ModeleApplication;
 
 import javax.swing.*;
@@ -13,7 +14,7 @@ import java.awt.*;
 public class Perspective1 extends JPanel implements ObservateurModele {
     /**** Initialisation des variables ****/
     private ModeleApplication modele;                   // Modèle de l'application
-    private Image perspective1;                         // Deuxième instance de l'image contenue dans le modèle
+    private Figure perspective1;                         // Deuxième instance de l'image contenue dans le modèle
 
     /**
      * Constructeur d'initialisation. Le panneau récupère les données du modèle de l'application, et ensuite crée son
@@ -32,6 +33,13 @@ public class Perspective1 extends JPanel implements ObservateurModele {
     public void mettreAJour() {
         if (!modele.recupererImages().isEmpty()) {
             perspective1 = modele.recupererImages().get(1);
+
+            if (perspective1.recupererPosition() == null) {
+                int[] centreDuPanneau = { (getWidth() / 2) - (perspective1.recupererTaille()[0] / 2),
+                        (getHeight() / 2) - (perspective1.recupererTaille()[1] / 2)} ;
+                modele.mettreAJourPositionImage(1, centreDuPanneau);
+            }
+
             repaint();
         }
     }
@@ -42,7 +50,11 @@ public class Perspective1 extends JPanel implements ObservateurModele {
      * @param g Notre paramètre graphique
      */
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(perspective1, 0, 0, getWidth(), getHeight(), this);
+        if (perspective1 != null) {
+            super.paintComponent(g);
+            g.drawImage(perspective1.recupererApparence(), perspective1.recupererPosition()[0],
+                    perspective1.recupererPosition()[1], perspective1.recupererTaille()[0],
+                    perspective1.recupererTaille()[1], this);
+        }
     }
 }
