@@ -18,9 +18,9 @@ public class FenetrePrincipale extends JFrame {
      * Constructeur d'initialisation. La fenêtre crée le menu, le panneau d'images et le panneau des droits
      * d'auteurs, puis les affiche selon un BorderLayout.
      */
-    public FenetrePrincipale(ModeleApplication ma) {
-        MenuFenetre menu = new MenuFenetre(ma);
-        PanneauImages panneauImages = new PanneauImages(ma);
+    public FenetrePrincipale(ModeleApplication modele) {
+        MenuFenetre menu = new MenuFenetre(modele);
+        PanneauImages panneauImages = new PanneauImages(modele);
         PanneauCopyright panneauCopyright = new PanneauCopyright();
         add(menu, BorderLayout.PAGE_START);
         add(panneauImages);
@@ -33,6 +33,6 @@ public class FenetrePrincipale extends JFrame {
         setResizable(false);
 
         // Tant que la fenêtre demeure active, les instances de l'image chargée sont mises à jour.
-        while (actif) { ma.notifierObservateurs(); }
+        while (actif) { modele.notifierObservateurs(); }
     }
 }

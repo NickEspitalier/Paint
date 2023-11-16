@@ -7,7 +7,7 @@ import modele.ModeleApplication;
  * une instance de l'image connectée à sa perspective dans son panneau respectif.
  */
 public class CommandeReduire extends Commande {
-    public void executer(ModeleApplication ma) {
+    public void executer(ModeleApplication modele) {
 
     }
 }

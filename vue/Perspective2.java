@@ -20,10 +20,10 @@ public class Perspective2 extends JPanel implements ObservateurModele {
      * Constructeur d'initialisation. Le panneau récupère les données du modèle de l'application, et ensuite crée son
      * contour.
      *
-     * @param ma Modèle de l'application
+     * @param modele Modèle de l'application
      */
-    public Perspective2(ModeleApplication ma) {
-        this.modele = ma;
+    public Perspective2(ModeleApplication modele) {
+        this.modele = modele;
         setBorder(BorderFactory.createLineBorder(Color.blue, 4));
     }
 

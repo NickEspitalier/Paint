@@ -16,10 +16,10 @@ public class FenetreStrategieCopie extends JFrame {
     /**
      * Constructeur d'initialisation. La fenêtre crée le panneau de stratégie, puis l'affiche.
      *
-     * @param ma Le modèle de l'application
+     * @param modele Le modèle de l'application
      */
-    public FenetreStrategieCopie(ModeleApplication ma) {
-        PanneauStrategieCopie panneauStrategieCopie = new PanneauStrategieCopie(ma);
+    public FenetreStrategieCopie(ModeleApplication modele) {
+        PanneauStrategieCopie panneauStrategieCopie = new PanneauStrategieCopie(modele);
         add(panneauStrategieCopie);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setTitle(TITRE_FENETRE);

@@ -7,5 +7,5 @@ import modele.ModeleApplication;
  * nom et exécute leur propre code qui est appelé par leur controlleur respectif.
  */
 public abstract class Commande {
-    public abstract void executer(ModeleApplication ma);
+    public abstract void executer(ModeleApplication modele);
 }

@@ -15,7 +15,7 @@ import java.io.File;
  */
 public class CommandeChargerImage extends Commande {
 
-    public void executer(ModeleApplication ma) {
+    public void executer(ModeleApplication modele) {
         // Une fenêtre de choix de fichier est premièrement appelée afin d'être utilisé par l'utilisateur.
         JFileChooser fileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
         fileChooser.setDialogTitle("Sélectionnez une image");
@@ -31,7 +31,7 @@ public class CommandeChargerImage extends Commande {
            génère un message d'erreur. */
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             try {
-                ma.stockerNouvelleImage(ImageIO.read(new File(fileChooser.getSelectedFile().getAbsolutePath())));
+                modele.stockerNouvelleImage(ImageIO.read(new File(fileChooser.getSelectedFile().getAbsolutePath())));
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Lecture impossible.", "Erreur",
                         JOptionPane.WARNING_MESSAGE);

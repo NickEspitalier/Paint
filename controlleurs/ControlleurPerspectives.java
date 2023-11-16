@@ -18,12 +18,12 @@ public class ControlleurPerspectives {
      * Constructeur d'initialisation avec variables.
      */
     public ControlleurPerspectives(Commande pressePapier, Commande translation, Commande zoomIn, Commande zoomOut,
-                                   ModeleApplication ma) {
+                                   ModeleApplication modele) {
         this.pressePapier = pressePapier;
         this.translation = translation;
         this.zoomIn = zoomIn;
         this.zoomOut = zoomOut;
-        this.modele = ma;
+        this.modele = modele;
     }
 
     // Méthodes d'exécution des commandes des perspectives

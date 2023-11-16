@@ -29,18 +29,18 @@ public class PanneauImages extends JPanel {
      * Constructeur d'initialisation. Le panneau crée la vignette et les perspectives, puis les attache au modèle
      * de l'application avant de les attacher à lui-même selon un GridLayout.
      *
-     * @param ma  Le modèle de l'application
+     * @param modele  Le modèle de l'application
      */
-    public PanneauImages(ModeleApplication ma) {
+    public PanneauImages(ModeleApplication modele) {
         controlleurPerspectives = new ControlleurPerspectives(new CommandePressePapier(), new CommandeTranslation(),
-                new CommandeAgrandir(), new CommandeReduire(), ma);
-        vignette = new Vignette(ma);
-        p1 = new Perspective1(ma);
-        p2 = new Perspective2(ma);
+                new CommandeAgrandir(), new CommandeReduire(), modele);
+        vignette = new Vignette(modele);
+        p1 = new Perspective1(modele);
+        p2 = new Perspective2(modele);
         ajouterFonctionsPerspectives();
-        ma.attacherObservateur(vignette);
-        ma.attacherObservateur(p1);
-        ma.attacherObservateur(p2);
+        modele.attacherObservateur(vignette);
+        modele.attacherObservateur(p1);
+        modele.attacherObservateur(p2);
         setLayout(new GridLayout(0,3));
         setBorder(BorderFactory.createLineBorder(Color.black, 4));
         add(vignette);

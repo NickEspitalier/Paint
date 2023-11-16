@@ -20,7 +20,7 @@ public class ControlleurMenu {
      */
     public ControlleurMenu(Commande chargerImage, Commande chargerPerspectives, Commande defaire, Commande refaire,
                            Commande optionsPressePapier, Commande quitter, Commande sauvegarder,
-                           ModeleApplication ma) {
+                           ModeleApplication modele) {
         this.chargerImage = chargerImage;
         this.chargerPerspectives = chargerPerspectives;
         this.defaire = defaire;
@@ -28,7 +28,7 @@ public class ControlleurMenu {
         this.optionsPressePapier = optionsPressePapier;
         this.quitter = quitter;
         this.sauvegarder = sauvegarder;
-        this.modele = ma;
+        this.modele = modele;
     }
 
     // Méthodes d'exécution des commandes du menu

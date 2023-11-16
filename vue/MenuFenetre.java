@@ -29,12 +29,12 @@ public class MenuFenetre extends JMenuBar {
      * Constructeur d'initialisation. Le menu ajoute des sous-menus à lui-même avant d'être affiché par la fenêtre
      * qui le contient.
      *
-     * @param ma Le modèle de l'application
+     * @param modele Le modèle de l'application
      */
-    public MenuFenetre(ModeleApplication ma) {
+    public MenuFenetre(ModeleApplication modele) {
          controlleurMenu = new ControlleurMenu(new CommandeChargerImage(), new CommandeChargerPerspectives(),
                  new CommandeDefaire(), new CommandeRefaire(), new CommandeOptionsPressePapier(),
-                 new CommandeQuitter(), new CommandeSauvegarder(), ma);
+                 new CommandeQuitter(), new CommandeSauvegarder(), modele);
         ajouterMenuFichier();
         ajouterMenuEdition();
         ajouterMenuPressePapier();
