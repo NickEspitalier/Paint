@@ -36,7 +36,7 @@ public class Perspective2 extends JPanel implements ObservateurModele {
 
             if (perspective2.recupererPosition() == null) {
                 int[] centreDuPanneau = { (getWidth() / 2) - (perspective2.recupererTaille()[0] / 2),
-                        (getHeight() / 2) - (perspective2.recupererTaille()[1] / 2), } ;
+                        (getHeight() / 2) - (perspective2.recupererTaille()[1] / 2) } ;
                 modele.mettreAJourPositionImage(2, centreDuPanneau);
             }
 
