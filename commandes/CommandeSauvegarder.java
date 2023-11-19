@@ -35,13 +35,22 @@ public class CommandeSauvegarder extends Commande {
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             ArrayList<Figure> imagesAffichees = modele.recupererImages();
             ArrayList<Figure> imagesASauvegarder = new ArrayList<>();
+
             try {
+                // Si aucune image n'a été chargée, aucune sauvegarde n'est effectuée.
                 if (imagesAffichees.isEmpty()) {
                     JOptionPane.showMessageDialog(null, "Une image ainsi que ses " +
                                     "perspectives n'ont pas encore été chargées.", "Erreur",
                             JOptionPane.WARNING_MESSAGE);
                 } else {
-                    FileOutputStream fichier = new FileOutputStream(fileChooser.getSelectedFile() + ".ima");
+                    FileOutputStream fichier;
+
+                    /* Nous écrasons une sauvegarde existante dans l'emplacement sélectionné si celle-ci possède le
+                       même nom que la nouvelle sauvegarde. */
+                    if (fileChooser.getSelectedFile().toString().contains(".ima")) {
+                        fichier = new FileOutputStream(fileChooser.getSelectedFile());
+                    } else { fichier = new FileOutputStream(fileChooser.getSelectedFile() + ".ima"); }
+
                     ObjectOutputStream lecteurObjets = new ObjectOutputStream(fichier);
 
                     /* Puisqu'une image n'est pas sérialisable, nous transformons premièrement les images des
