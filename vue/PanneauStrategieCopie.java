@@ -16,9 +16,9 @@ public class PanneauStrategieCopie extends JPanel {
 
         boutonConfirmation.addActionListener((ActionEvent e) -> {
             if (cochePosition.isSelected() && cocheZoom.isSelected()) {
-                modele.choisirOptionsPressePapier("Position et Niveau de zoom");
-            } else if (cochePosition.isSelected()) { modele.choisirOptionsPressePapier("Position");
-            } else if (cocheZoom.isSelected()) { modele.choisirOptionsPressePapier("Niveau de zoom"); }
+                modele.modifierOptionsPressePapier("Position et Niveau de zoom");
+            } else if (cochePosition.isSelected()) { modele.modifierOptionsPressePapier("Position");
+            } else if (cocheZoom.isSelected()) { modele.modifierOptionsPressePapier("Niveau de zoom"); }
 
             System.out.println(modele.recupererChoixPressePapier());
         });

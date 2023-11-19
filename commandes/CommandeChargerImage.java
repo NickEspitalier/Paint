@@ -40,5 +40,5 @@ public class CommandeChargerImage extends Commande {
             JOptionPane.showMessageDialog(null, "Sélection annulée.", "Erreur",
                     JOptionPane.WARNING_MESSAGE);
         }
-    };
+    }
 }

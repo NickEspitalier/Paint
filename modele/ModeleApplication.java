@@ -38,7 +38,8 @@ public class ModeleApplication extends Sujet {
     }
 
     // Setters et Getters des variables du modèle
-    public void choisirOptionsPressePapier(String choix) { this.choixPressePapier = choix; }
+    public void modifierPerspectives(ArrayList<Figure> persp) { this.images = persp; }
+    public void modifierOptionsPressePapier(String choix) { this.choixPressePapier = choix; }
     public ArrayList<Figure> recupererImages() { return images; }
     public String recupererChoixPressePapier() { return choixPressePapier; }
 }
