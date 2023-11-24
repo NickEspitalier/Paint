@@ -5,6 +5,7 @@ import commandes.CommandeTranslation;
 import commandes.CommandeAgrandir;
 import commandes.CommandeReduire;
 import controlleurs.ControlleurPerspectives;
+import controlleurs.Souris;
 import modele.ModeleApplication;
 import javax.swing.*;
 import java.awt.*;
@@ -24,6 +25,7 @@ public class PanneauImages extends JPanel {
     private Vignette vignette;
     private Perspective1 p1;
     private Perspective2 p2;
+    private final Souris souris = new Souris();
 
     /**
      * Constructeur d'initialisation. Le panneau crée la vignette et les perspectives, puis les attache au modèle
@@ -55,11 +57,23 @@ public class PanneauImages extends JPanel {
         ArrayList<JPanel> perspectives = new ArrayList<>(Arrays.asList(p1, p2));
 
         for (JPanel p : perspectives) {
+
             p.addMouseListener(new MouseAdapter() {
                 public void mousePressed(MouseEvent e) {
-                    controlleurPerspectives.deplacerPerspective();
+                    souris.setX(e.getX());
+                    souris.setY(e.getY());
                 }
             });
+
+            p.addMouseListener(new MouseAdapter() {
+                @Override
+                public void mouseDragged(MouseEvent e) {
+                    souris.setDx(e.getX() - e.getXOnScreen());
+                    souris.setDy(e.getY() - e.getYOnScreen());
+                    controlleurPerspectives.deplacerPerspective();
+                }
+            }) ;
+
 
             p.addMouseWheelListener((MouseWheelEvent e) ->
                     controlleurPerspectives.changerTaillePerspective(e.getWheelRotation()));
