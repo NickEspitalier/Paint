@@ -13,24 +13,24 @@ import java.util.ArrayList;
  */
 public class CommandeTranslation extends Commande {
 
-    private final Souris souris = new Souris();
-
     public void executer(ModeleApplication modele) {
 
         // Les deux perspective qui peuvent se déplacer
         Figure perspective1 = modele.recupererImages().get(1);
         Figure perspective2 = modele.recupererImages().get(2);
 
-        // Création du nouveau centre de l'image selon le déplacement en x et y de la souris
-        int dx = souris.getDx();
-        int dy = souris.getDy();
-        int[] nouveauCentreImage = { dx, dy } ;
 
-        // Compare la position des perspectives avec le nouveau centre de l'image
-        if(perspective1.recupererPosition() != nouveauCentreImage){
+        // Création du nouveau centre de l'image selon le déplacement en x et y de la souris
+        int dx = Souris.getDx();
+        int dy = Souris.getDy();
+        int[] nouveauCentreImage = { dx, dy };
+
+
+        // Selon la perspective ou la souris se trouve, faire déplacer l'image dans la perspective en question
+        if(Souris.getPerspectiveActuel() == "Perspective1"){
             perspective1.modifierPosition(nouveauCentreImage);
         }
-        else if(perspective2.recupererPosition() != nouveauCentreImage){
+        if(Souris.getPerspectiveActuel() == "Perspective2"){
             perspective2.modifierPosition(nouveauCentreImage);
         }
     }

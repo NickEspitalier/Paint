@@ -1,49 +1,103 @@
 package controlleurs;
 
+import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
+import commandes.CommandeAgrandir;
+import commandes.CommandePressePapier;
+import commandes.CommandeReduire;
+import commandes.CommandeTranslation;
 import modele.Figure;
+import modele.ModeleApplication;
+import vue.Perspective1;
+import vue.Perspective2;
 
-import java.awt.event.MouseEvent;
+import javax.swing.*;
+import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class Souris {
-    private int x; // Poistion en x de la souris
-    private int y; // Position en y de la souris
-    private int dx; // Déplacement en x de la souris
-    private int dy; // Déplacement en y de la souris
+public class Souris implements MouseListener, MouseMotionListener {
+    private static int x; // Poistion en x de la souris
+    private static int y; // Position en y de la souris
+    private static int dx; // Déplacement en x de la souris
+    private static int dy; // Déplacement en y de la souris
+    private static String perspectiveActuel;
+    private Perspective1 p1;  // La perspective 1
+    private Perspective2 p2; // La perspective 2
+    private ControlleurPerspectives controlleurPerspectives; // Le controlleur qui va s'occuper de faire les actions
+
 
 
     // GETTERS
-    public int getX() {
+    public static int getX() {
         return x;
     }
 
-    public int getY() {
+    public static int getY() {
         return y;
     }
 
-    public int getDx() {
+    public static int getDx() {
         return dx;
     }
 
-    public int getDy() {
+    public static int getDy() {
         return dy;
     }
 
-
-    // SETTERS
-    public void setX(int x) {
-        this.x = x;
+    public static String getPerspectiveActuel() {
+        return perspectiveActuel;
     }
 
-    public void setY(int y) {
-        this.y = y;
+    public Souris(ModeleApplication modele){
+        controlleurPerspectives = new ControlleurPerspectives(new CommandePressePapier(), new CommandeTranslation(),
+                new CommandeAgrandir(), new CommandeReduire(), modele);
     }
 
-    public void setDx(int dx) {
-        this.dx = dx;
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        System.out.println("Mouse clicked");
     }
 
-    public void setDy(int dy) {
-        this.dy = dy;
+    @Override
+    public void mousePressed(MouseEvent e) {
+        System.out.println("Mouse pressed");
+        Souris.x = e.getX();
+        Souris.y = e.getY();
     }
+
+    @Override
+    public void mouseDragged(MouseEvent e){
+        System.out.println("Mouse dragged");
+        Souris.dx = e.getX() - Souris.x;
+        Souris.dy = e.getY() - Souris.y;
+        controlleurPerspectives.deplacerPerspective();
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        System.out.println("Mouse released");
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        //System.out.println("Mouse moved");
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        String figureActuel = e.getSource().toString();
+
+        if(figureActuel.startsWith("Perspective1")){
+            perspectiveActuel = "Perspective1";
+        }
+        else if(figureActuel.startsWith("Perspective2")){
+            perspectiveActuel = "Perspective2";
+        }
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        //System.out.println("Mouse exited");
+    }
+
 }
