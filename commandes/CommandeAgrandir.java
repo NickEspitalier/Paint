@@ -23,7 +23,7 @@ public class CommandeAgrandir extends Commande {
             int[] tailleFinalImage1 = new int[]{tailleInitialImage1[0] - Souris.getSensDeLaMolette(),
                     tailleInitialImage1[1] - Souris.getSensDeLaMolette() };
 
-            if(tailleInitialImage1[0] >= 0 && tailleInitialImage1[1] >= 0){
+            if(tailleInitialImage1[0] >= 0 || tailleInitialImage1[1] >= 0){
                 modele.mettreAJourTailleImage(1, tailleFinalImage1);
             }
         }
@@ -32,7 +32,7 @@ public class CommandeAgrandir extends Commande {
             int[] tailleFinalImage2 = new int[]{tailleInitialImage2[0] - Souris.getSensDeLaMolette(),
                     tailleInitialImage2[1] - Souris.getSensDeLaMolette() };
 
-            if(tailleFinalImage2[0] >= 0 && tailleFinalImage2[1] >= 0){
+            if(tailleFinalImage2[0] >= 0 || tailleFinalImage2[1] >= 0){
                 modele.mettreAJourTailleImage(2, tailleFinalImage2);
             }
         }
