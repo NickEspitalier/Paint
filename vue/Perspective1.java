@@ -1,5 +1,11 @@
 package vue;
 
+import commandes.CommandeAgrandir;
+import commandes.CommandePressePapier;
+import commandes.CommandeReduire;
+import commandes.CommandeTranslation;
+import controlleurs.ControlleurPerspectives;
+import controlleurs.Souris;
 import modele.Figure;
 import modele.ModeleApplication;
 
@@ -15,6 +21,11 @@ public class Perspective1 extends JPanel implements ObservateurModele {
     /**** Initialisation des variables ****/
     private ModeleApplication modele;                   // Modèle de l'application
     private Figure perspective1;                         // Deuxième instance de l'image contenue dans le modèle
+    private String nomPerspective = "Perspective1";
+
+    public String getNomPerspective() {
+        return nomPerspective;
+    }
 
     /**
      * Constructeur d'initialisation. Le panneau récupère les données du modèle de l'application, et ensuite crée son
@@ -25,6 +36,11 @@ public class Perspective1 extends JPanel implements ObservateurModele {
     public Perspective1(ModeleApplication modele) {
         this.modele = modele;
         setBorder(BorderFactory.createLineBorder(Color.blue, 4));
+
+        Souris souris = new Souris(modele);
+        addMouseListener(souris);
+        addMouseMotionListener(souris);
+        addMouseWheelListener(souris);
     }
 
     /**
@@ -56,5 +72,14 @@ public class Perspective1 extends JPanel implements ObservateurModele {
                     perspective1.recupererPosition()[1], perspective1.recupererTaille()[0],
                     perspective1.recupererTaille()[1], this);
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Perspective1{" +
+                "modele=" + modele +
+                ", perspective1=" + perspective1 +
+                ", nomPerspective='" + nomPerspective + '\'' +
+                '}';
     }
 }
