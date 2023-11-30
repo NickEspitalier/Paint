@@ -18,21 +18,26 @@ public class CommandeReduire extends Commande {
         int[] tailleInitialImage2 = image2.recupererTaille();
 
 
+
         // Selon la perspective de la souris actuel, agrandir l'image approprier
         if(Souris.getPerspectiveActuel() == "Perspective1"){
 
-            int[] tailleFinalImage1 = new int[]{tailleInitialImage1[0] -= Souris.getSensDeLaMolette(),
-                    tailleInitialImage1[1] -= Souris.getSensDeLaMolette() };
+            int[] tailleFinalImage1 = new int[]{tailleInitialImage1[0] - Souris.getSensDeLaMolette(),
+                    tailleInitialImage1[1] - Souris.getSensDeLaMolette() };
 
-            modele.mettreAJourTailleImage(1, tailleFinalImage1);
+            if(tailleFinalImage1[0] >= 0 && tailleFinalImage1[1] >= 0){
+                modele.mettreAJourTailleImage(1, tailleFinalImage1);
+            }
         }
 
         if(Souris.getPerspectiveActuel() == "Perspective2"){
 
-            int[] tailleFinalImage2 = new int[]{tailleInitialImage2[0] -= Souris.getSensDeLaMolette(),
-                    tailleInitialImage2[1] -= Souris.getSensDeLaMolette() };
+            int[] tailleFinalImage2 = new int[]{tailleInitialImage2[0] - Souris.getSensDeLaMolette(),
+                    tailleInitialImage2[1] - Souris.getSensDeLaMolette() };
 
-            modele.mettreAJourTailleImage(2, tailleFinalImage2);
+            if(tailleFinalImage2[0] >= 0 && tailleFinalImage2[1] >= 0){
+                modele.mettreAJourTailleImage(2, tailleFinalImage2);
+            }
         }
     }
 }
