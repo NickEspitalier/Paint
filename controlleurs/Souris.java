@@ -15,17 +15,18 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class Souris implements MouseListener, MouseMotionListener {
+
+public class Souris implements MouseListener, MouseMotionListener, MouseWheelListener {
     private static int x; // Poistion en x de la souris
     private static int y; // Position en y de la souris
     private static int dx; // Déplacement en x de la souris
     private static int dy; // Déplacement en y de la souris
+    private static int sensDeLaMolette; // Sens de la molette
+
     private static String perspectiveActuel;
     private Perspective1 p1;  // La perspective 1
     private Perspective2 p2; // La perspective 2
     private ControlleurPerspectives controlleurPerspectives; // Le controlleur qui va s'occuper de faire les actions
-
-
 
     // GETTERS
     public static int getX() {
@@ -43,6 +44,9 @@ public class Souris implements MouseListener, MouseMotionListener {
     public static int getDy() {
         return dy;
     }
+
+
+    public static int getSensDeLaMolette() { return sensDeLaMolette; }
 
     public static String getPerspectiveActuel() {
         return perspectiveActuel;
@@ -100,4 +104,18 @@ public class Souris implements MouseListener, MouseMotionListener {
         //System.out.println("Mouse exited");
     }
 
+
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+        sensDeLaMolette = e.getWheelRotation();
+
+        if (sensDeLaMolette < 0) {
+            System.out.println("Mouse wheel moved up");
+            controlleurPerspectives.changerTaillePerspective(sensDeLaMolette);
+        } else {
+            System.out.println("Mouse wheel moved down");
+            controlleurPerspectives.changerTaillePerspective(sensDeLaMolette);
+        }
+    }
 }
+

@@ -41,6 +41,7 @@ public class Perspective2 extends JPanel implements ObservateurModele {
         Souris souris = new Souris(modele);
         addMouseListener(souris);
         addMouseMotionListener(souris);
+        addMouseWheelListener(souris);
     }
 
     /**
