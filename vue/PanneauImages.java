@@ -5,6 +5,7 @@ import commandes.CommandeTranslation;
 import commandes.CommandeAgrandir;
 import commandes.CommandeReduire;
 import controlleurs.ControlleurPerspectives;
+import controlleurs.Souris;
 import modele.ModeleApplication;
 import javax.swing.*;
 import java.awt.*;

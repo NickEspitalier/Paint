@@ -22,7 +22,8 @@ public class ModeleApplication extends Sujet {
      */
     public void stockerNouvelleImage(Image im) {
         for (int i = 0; i < 3; i++) {
-            Figure nouvelleImage = new Figure(im, null, new int[] { im.getWidth(null),
+            Figure nouvelleImage = new Figure(im, null,
+                    new int[] { im.getWidth(null),
                     im.getHeight(null)});
             if (premierChargement) { images.add(nouvelleImage); } else { images.set(i, nouvelleImage); }
         }

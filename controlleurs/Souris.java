@@ -15,12 +15,14 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
 public class Souris implements MouseListener, MouseMotionListener, MouseWheelListener {
     private static int x; // Poistion en x de la souris
     private static int y; // Position en y de la souris
     private static int dx; // Déplacement en x de la souris
     private static int dy; // Déplacement en y de la souris
     private static int sensDeLaMolette; // Sens de la molette
+
     private static String perspectiveActuel;
     private Perspective1 p1;  // La perspective 1
     private Perspective2 p2; // La perspective 2
@@ -42,6 +44,7 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
     public static int getDy() {
         return dy;
     }
+
 
     public static int getSensDeLaMolette() { return sensDeLaMolette; }
 
@@ -101,6 +104,7 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
         //System.out.println("Mouse exited");
     }
 
+
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         sensDeLaMolette = e.getWheelRotation();
@@ -114,3 +118,4 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
         }
     }
 }
+
