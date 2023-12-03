@@ -15,6 +15,9 @@ import java.util.ArrayList;
  * Commande qui a pour but de charger des perspectives récupérées de la machine de l'utilisateur.
  */
 public class CommandeChargerPerspectives extends Commande {
+
+    private GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+
     public void executer(ModeleApplication modele) {
         // Une fenêtre de choix de fichier est premièrement appelée afin d'être utilisée par l'utilisateur.
         JFileChooser fileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
@@ -57,5 +60,7 @@ public class CommandeChargerPerspectives extends Commande {
             JOptionPane.showMessageDialog(null, "Sélection annulée.", "Erreur",
                     JOptionPane.WARNING_MESSAGE);
         }
+
+        gestionnaireDeCommande.AjoutCommande(this);
     }
 }

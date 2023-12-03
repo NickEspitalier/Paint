@@ -9,6 +9,9 @@ import modele.ModeleApplication;
  * une instance de l'image connectée à sa perspective dans son panneau respectif.
  */
 public class CommandeReduire extends Commande {
+
+    private GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+
     public void executer(ModeleApplication modele) {
 
         Figure image1 = modele.recupererImages().get(1);
@@ -39,5 +42,7 @@ public class CommandeReduire extends Commande {
                 modele.mettreAJourTailleImage(2, tailleFinalImage2);
             }
         }
+
+        gestionnaireDeCommande.AjoutCommande(this);
     }
 }

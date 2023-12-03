@@ -13,8 +13,7 @@ import java.util.ArrayList;
  */
 public class CommandeTranslation extends Commande {
 
-    int[] positionPrécédenteImage1 = new int[2];
-    int[] positionPrécédenteImage2 = new int[2];
+    private GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
 
     public void executer(ModeleApplication modele) {
 
@@ -40,5 +39,7 @@ public class CommandeTranslation extends Commande {
         if(Souris.getPerspectiveActuel() == "Perspective2"){
             modele.mettreAJourPositionImage(2, déplacementImage);
         }
+
+        gestionnaireDeCommande.AjoutCommande(this);
     }
 }

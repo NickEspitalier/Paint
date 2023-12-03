@@ -17,6 +17,9 @@ import java.util.ArrayList;
  * Commande qui a pour but de sauvegarder les perspectives présentement en utilisation.
  */
 public class CommandeSauvegarder extends Commande {
+
+    private GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+
     public void executer(ModeleApplication modele) {
         /* Une fenêtre de choix d'emplacement du fichier est premièrement appelée afin d'être utilisée
            par l'utilisateur. */
@@ -78,5 +81,7 @@ public class CommandeSauvegarder extends Commande {
             JOptionPane.showMessageDialog(null, "Sélection annulée.", "Erreur",
                     JOptionPane.WARNING_MESSAGE);
         }
+
+        gestionnaireDeCommande.AjoutCommande(this);
     }
 }

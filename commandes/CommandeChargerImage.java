@@ -15,6 +15,8 @@ import java.io.File;
  */
 public class CommandeChargerImage extends Commande {
 
+    private GestionnaireDeCommande gestionnaireDeCommande = GestionnaireDeCommande.getInstance();
+
     public void executer(ModeleApplication modele) {
         // Une fenêtre de choix de fichier est premièrement appelée afin d'être utilisé par l'utilisateur.
         JFileChooser fileChooser = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
@@ -40,5 +42,7 @@ public class CommandeChargerImage extends Commande {
             JOptionPane.showMessageDialog(null, "Sélection annulée.", "Erreur",
                     JOptionPane.WARNING_MESSAGE);
         }
+
+        gestionnaireDeCommande.AjoutCommande(this);
     }
 }

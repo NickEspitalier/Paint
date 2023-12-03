@@ -25,6 +25,7 @@ public class MenuFenetre extends JMenuBar {
     private static final String TITRE_MENU_PRESSEPAPIER_STRAT = "Choisir la stratégie du presse-papier";
     private ControlleurMenu controlleurMenu;          // Controlleur du menu
 
+
     /**
      * Constructeur d'initialisation. Le menu ajoute des sous-menus à lui-même avant d'être affiché par la fenêtre
      * qui le contient.

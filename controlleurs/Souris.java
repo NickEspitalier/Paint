@@ -1,10 +1,7 @@
 package controlleurs;
 
 import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
-import commandes.CommandeAgrandir;
-import commandes.CommandePressePapier;
-import commandes.CommandeReduire;
-import commandes.CommandeTranslation;
+import commandes.*;
 import modele.Figure;
 import modele.ModeleApplication;
 import vue.Perspective1;
@@ -45,12 +42,12 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
         return dy;
     }
 
-
     public static int getSensDeLaMolette() { return sensDeLaMolette; }
 
     public static String getPerspectiveActuel() {
         return perspectiveActuel;
     }
+
 
     public Souris(ModeleApplication modele){
         controlleurPerspectives = new ControlleurPerspectives(new CommandePressePapier(), new CommandeTranslation(),
@@ -59,19 +56,17 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("Mouse clicked");
+
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        System.out.println("Mouse pressed");
         Souris.x = e.getX();
         Souris.y = e.getY();
     }
 
     @Override
     public void mouseDragged(MouseEvent e){
-        System.out.println("Mouse dragged");
         Souris.dx = e.getX() - Souris.x;
         Souris.dy = e.getY() - Souris.y;
         controlleurPerspectives.deplacerPerspective();
@@ -79,12 +74,10 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        System.out.println("Mouse released");
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
-        //System.out.println("Mouse moved");
     }
 
     @Override
@@ -101,7 +94,6 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
 
     @Override
     public void mouseExited(MouseEvent e) {
-        //System.out.println("Mouse exited");
     }
 
 
@@ -110,10 +102,8 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
         sensDeLaMolette = e.getWheelRotation();
 
         if (sensDeLaMolette < 0) {
-            System.out.println("Mouse wheel moved up");
             controlleurPerspectives.changerTaillePerspective(sensDeLaMolette);
         } else {
-            System.out.println("Mouse wheel moved down");
             controlleurPerspectives.changerTaillePerspective(sensDeLaMolette);
         }
     }
