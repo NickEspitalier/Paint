@@ -18,10 +18,6 @@ public class Perspective1 extends JPanel implements ObservateurModele {
     private Figure perspective1;                         // Deuxième instance de l'image contenue dans le modèle
     private String nomPerspective = "Perspective1";
 
-    public String getNomPerspective() {
-        return nomPerspective;
-    }
-
     /**
      * Constructeur d'initialisation. Le panneau récupère les données du modèle de l'application, et ensuite crée son
      * contour.

@@ -19,10 +19,6 @@ public class Perspective2 extends JPanel implements ObservateurModele {
 
     private String nomPerspective = "Perspective2";
 
-    public String getNomPerspective() {
-        return nomPerspective;
-    }
-
     /**
      * Constructeur d'initialisation. Le panneau récupère les données du modèle de l'application, et ensuite crée son
      * contour.
