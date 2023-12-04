@@ -23,15 +23,16 @@ import java.util.ArrayList;
  */
 public final class GestionnaireDeCommande {
 
+    private ArrayList<Commande> listeCommandes = new ArrayList<>();
+    private String pathFichierXML = "fichier.xml";
+
     private static final GestionnaireDeCommande INSTANCE = new GestionnaireDeCommande();
     private GestionnaireDeCommande(){}
     public static GestionnaireDeCommande getInstance(){
         return INSTANCE;
     }
 
-    private ArrayList<Commande> listeCommandes = new ArrayList<>();
 
-    private String pathFichierXML = "fichier.xml";
 
     public void AjoutCommande(Commande commande) {
         enregistrerCommandesDansXML(commande);
