@@ -1,18 +1,18 @@
 package controlleurs;
 
-import com.sun.xml.internal.bind.v2.runtime.output.StAXExStreamWriterOutput;
-import commandes.*;
-import modele.Figure;
+import commandes.CommandeAgrandir;
+import commandes.CommandePressePapier;
+import commandes.CommandeReduire;
+import commandes.CommandeTranslation;
 import modele.ModeleApplication;
-import vue.Perspective1;
-import vue.Perspective2;
 
-import javax.swing.*;
 import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 
-
+/**
+ * La classe souris gère les commandes exécuter sur les images
+ * selon ce que l'utilisateur fait avec la souris.
+ * Les fonctionnalités fonctionne seulement sur la perspective 1 et 2 intentionnellement
+ */
 public class Souris implements MouseListener, MouseMotionListener, MouseWheelListener {
     private static int x; // Poistion en x de la souris
     private static int y; // Position en y de la souris
@@ -20,20 +20,11 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
     private static int dy; // Déplacement en y de la souris
     private static int sensDeLaMolette; // Sens de la molette
 
-    private static String perspectiveActuel;
-    private Perspective1 p1;  // La perspective 1
-    private Perspective2 p2; // La perspective 2
+    private static String perspectiveActuel; // Perspective actuel de la souris
+
     private ControlleurPerspectives controlleurPerspectives; // Le controlleur qui va s'occuper de faire les actions
 
     // GETTERS
-    public static int getX() {
-        return x;
-    }
-
-    public static int getY() {
-        return y;
-    }
-
     public static int getDx() {
         return dx;
     }
@@ -49,22 +40,28 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
     }
 
 
+    // CONSTRUCTEUR
     public Souris(ModeleApplication modele){
         controlleurPerspectives = new ControlleurPerspectives(new CommandePressePapier(), new CommandeTranslation(),
                 new CommandeAgrandir(), new CommandeReduire(), modele);
     }
 
+
     @Override
-    public void mouseClicked(MouseEvent e) {
+    public void mouseClicked(MouseEvent e) {}
 
-    }
-
+    /* Méthode qui initialise la position initiale de la souris
+     */
     @Override
     public void mousePressed(MouseEvent e) {
         Souris.x = e.getX();
         Souris.y = e.getY();
     }
 
+
+    /* Méthode qui gère la translation de l'image
+    sur la perspective selon le déplacement de la souris
+    */
     @Override
     public void mouseDragged(MouseEvent e){
         Souris.dx = e.getX() - Souris.x;
@@ -73,13 +70,14 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
     }
 
     @Override
-    public void mouseReleased(MouseEvent e) {
-    }
+    public void mouseReleased(MouseEvent e) {}
 
     @Override
-    public void mouseMoved(MouseEvent e) {
-    }
+    public void mouseMoved(MouseEvent e) {}
 
+    /* Méthode qui change la perspective actuel selon
+       la position de la souris entre les deux perspectives
+    */
     @Override
     public void mouseEntered(MouseEvent e) {
         String figureActuel = e.getSource().toString();
@@ -93,10 +91,12 @@ public class Souris implements MouseListener, MouseMotionListener, MouseWheelLis
     }
 
     @Override
-    public void mouseExited(MouseEvent e) {
-    }
+    public void mouseExited(MouseEvent e) {}
 
 
+    /* Méthode qui gère le mouvement de la roulette sur les perspectives
+       pour agrandir ou réduire les images
+    */
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         sensDeLaMolette = e.getWheelRotation();
