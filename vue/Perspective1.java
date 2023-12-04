@@ -1,10 +1,5 @@
 package vue;
 
-import commandes.CommandeAgrandir;
-import commandes.CommandePressePapier;
-import commandes.CommandeReduire;
-import commandes.CommandeTranslation;
-import controlleurs.ControlleurPerspectives;
 import controlleurs.Souris;
 import modele.Figure;
 import modele.ModeleApplication;

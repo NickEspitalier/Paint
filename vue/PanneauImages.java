@@ -1,17 +1,9 @@
 package vue;
 
-import commandes.CommandePressePapier;
-import commandes.CommandeTranslation;
-import commandes.CommandeAgrandir;
-import commandes.CommandeReduire;
-import controlleurs.ControlleurPerspectives;
-import controlleurs.Souris;
 import modele.ModeleApplication;
+
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Panneau Swing qui agit en tant que conteneur des instances de l'image chargée ainsi que des opérations pouvant

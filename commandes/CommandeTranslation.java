@@ -1,11 +1,8 @@
 package commandes;
 
-import com.sun.glass.ui.Screen;
 import controlleurs.Souris;
 import modele.Figure;
 import modele.ModeleApplication;
-
-import java.util.ArrayList;
 
 /**
  * Commande qui a pour but d'appliquer une technique de translation à une perspective. En d'autres termes, elle permet
@@ -21,8 +18,6 @@ public class CommandeTranslation extends Commande {
         Figure image1 = modele.recupererImages().get(1);
         Figure image2 = modele.recupererImages().get(2);
 
-        // La position actuel des deux images sur leur perspectives
-        int[] positioninitial1 = image1.recupererPosition();
 
         // Création du nouveau centre de l'image selon le déplacement en x et y de la souris
         int dx = Souris.getDx();

@@ -1,13 +1,11 @@
 package commandes;
 
-import modele.Figure;
 import modele.ModeleApplication;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.filechooser.FileSystemView;
-import java.awt.*;
 import java.io.File;
 
 /**
