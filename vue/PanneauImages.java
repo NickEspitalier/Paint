@@ -1,6 +1,7 @@
 package vue;
 
 import modele.ModeleApplication;
+
 import javax.swing.*;
 import java.awt.*;
 

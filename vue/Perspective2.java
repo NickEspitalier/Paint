@@ -1,10 +1,5 @@
 package vue;
 
-import commandes.CommandeAgrandir;
-import commandes.CommandePressePapier;
-import commandes.CommandeReduire;
-import commandes.CommandeTranslation;
-import controlleurs.ControlleurPerspectives;
 import controlleurs.Souris;
 import modele.Figure;
 import modele.ModeleApplication;
@@ -23,10 +18,6 @@ public class Perspective2 extends JPanel implements ObservateurModele {
     private Figure perspective2;                         // Troisième instance de l'image contenue dans le modèle
 
     private String nomPerspective = "Perspective2";
-
-    public String getNomPerspective() {
-        return nomPerspective;
-    }
 
     /**
      * Constructeur d'initialisation. Le panneau récupère les données du modèle de l'application, et ensuite crée son
