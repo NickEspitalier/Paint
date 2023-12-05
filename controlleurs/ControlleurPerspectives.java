@@ -29,14 +29,8 @@ public class ControlleurPerspectives {
     // Méthodes d'exécution des commandes des perspectives
     public void copierColler() { pressePapier.executer(modele); }
     public void deplacerPerspective() { translation.executer(modele); }
-
     public void changerTaillePerspective(int rotation) {
-
-        if (rotation < 0) {
-            zoomIn.executer(modele);
-        }
-        else {
-            zoomOut.executer(modele);
-        }
+        if (rotation < 0) { zoomIn.executer(modele); }
+        else { zoomOut.executer(modele); }
     }
 }

@@ -74,6 +74,9 @@ public class Perspective1 extends JPanel implements ObservateurModele {
         }
     }
 
+    /**
+     * Récupère des informations sur le panneau.
+     */
     @Override
     public String toString() {
         return "Perspective1{" +

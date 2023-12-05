@@ -30,10 +30,22 @@ public class ModeleApplication extends Sujet {
         premierChargement = false;
     }
 
+    /**
+     * Met à jour la position d'une instance de l'image chargée selon des coordonnées [x,y].
+     *
+     * @param numPerspective Le numéro de la perspective (1 ou 2)
+     * @param pos Les nouvelles coordonnées d'une instance de l'image dans la perspective
+     */
     public void mettreAJourPositionImage(int numPerspective, int[] pos) {
         images.get(numPerspective).modifierPosition(pos);
     }
 
+    /**
+     * Met à jour la taille d'une instance de l'image chargée selon une largeur et une hauteur.
+     *
+     * @param numPerspective Le numéro de la perspective (1 ou 2)
+     * @param taille La nouvelle largeur et la nouvelle hauteur de l'instance de l'image dans la perspective
+     */
     public void mettreAJourTailleImage(int numPerspective, int[] taille) {
         images.get(numPerspective).modifierTaille(taille);
     }

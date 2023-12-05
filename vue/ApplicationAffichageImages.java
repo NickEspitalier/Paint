@@ -7,11 +7,10 @@ import modele.ModeleApplication;
  *
  * @author Dominic Achkarian (ACHD28079808)
  * @author Nicolas Espitalier (ESPN84300201)
- * @author Thomas Lavoie ()
+ * @author Thomas Lavoie (LAVT80080106)
  * @version Copyright A2023
  */
 public class ApplicationAffichageImages {
-
     public static void main(String[] args) {
         // On initialise le modèle de l'application, puis on exécute la fenêtre principale avec celui-ci.
         ModeleApplication modele = new ModeleApplication();

@@ -1,11 +1,8 @@
 package commandes;
 
-import com.sun.glass.ui.Screen;
 import controlleurs.Souris;
 import modele.Figure;
 import modele.ModeleApplication;
-
-import java.util.ArrayList;
 
 /**
  * Commande qui a pour but d'appliquer une technique de translation à une perspective. En d'autres termes, elle permet

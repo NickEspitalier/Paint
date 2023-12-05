@@ -73,7 +73,6 @@ public class MenuFenetre extends JMenuBar {
      * Ajoute le sous-menu "Édition" au menu.
      */
     private void ajouterMenuEdition() {
-        // On initialise les éléments du sous-menu...
         JMenu menuEdition = new JMenu(TITRE_MENU_EDITION);
         JMenuItem menuDefaire = new JMenuItem(TITRE_MENU_EDITION_DEFAIRE);
         JMenuItem menuRefaire = new JMenuItem(TITRE_MENU_EDITION_REFAIRE);

@@ -1,29 +1,18 @@
 package vue;
 
-import commandes.CommandePressePapier;
-import commandes.CommandeTranslation;
-import commandes.CommandeAgrandir;
-import commandes.CommandeReduire;
-import controlleurs.ControlleurPerspectives;
-import controlleurs.Souris;
 import modele.ModeleApplication;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
  * Panneau Swing qui agit en tant que conteneur des instances de l'image chargée ainsi que des opérations pouvant
  * être accomplies avec la souris de l'utilisateur.
  */
 public class PanneauImages extends JPanel {
-
     /**** Initialisation des variables ****/
     private Vignette vignette;
     private Perspective1 p1;
     private Perspective2 p2;
-
 
     /**
      * Constructeur d'initialisation. Le panneau crée la vignette et les perspectives, puis les attache au modèle

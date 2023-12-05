@@ -34,6 +34,7 @@ public class CommandeChargerPerspectives extends Commande {
            dans la liste des instances d'images du modèle de l'application. */
         if (returnValue == JFileChooser.APPROVE_OPTION) {
             ArrayList<Figure> perspectivesAAfficher = new ArrayList<>();
+
             try {
                 FileInputStream fichier = new FileInputStream(fileChooser.getSelectedFile());
                 ObjectInputStream lecteurObjects = new ObjectInputStream(fichier);
